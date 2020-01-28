@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { Helmet } from 'react-helmet';
+import M from 'materialize-css';
 
 import questions from '../../questions.json';
 import isEmpty from '../../utils/is-empty';
@@ -13,8 +14,8 @@ class Play extends Component {
             nextQuestion:{},
             previousQuestion: {},
             answer: '',
-            numberofQuestions: 0,
-            numberofAnsweredQuestions:0,
+            numberOfQuestions: 0,
+            numberOfAnsweredQuestions:0,
             currentQuestionIndex: 0,
             score: 0,
             correctAnswers: 0,
@@ -47,7 +48,49 @@ class Play extends Component {
               });
           }
       };
+
+      handleOptionClick =(e) => {
+         if (e.target.innerHTML.toLowerCase()=== this.state.answer.toLowerCase()){
+            this.correctAnswer();
+            } 
+            else {
+                this.wrongAnswer()
+            }
+        
+        
+      }
+
+      correctAnswer = () =>{
+          M.toast({
+              html: 'Correct Answer!!!',
+              classes: 'toast-valid',
+              displayLength: 1500
+          });
+          this.setState(prevState =>({
+              score: prevState.score + 1,
+              correctAnswers: prevState.correctAnswers + 1,
+              currentQuestionIndex: prevState.currentQuestionIndex + 1,
+              numberOfAnsweredQuestions:prevState.numberOfAnsweredQuestions + 1
+          }), ()=>{
+              this.displayQuestions(this.state.questions, this.state.currentQuestion, this.state.nextQuestion, this.state.previousQuestion)
+          });
+      }
          
+      wrongAnswer = () =>{
+        navigator.vibrate(1000)
+        M.toast({
+            html: 'Wrong Answer!!!',
+            classes: 'toast-valid',
+            displayLength: 1500
+        });
+        this.setState(prevState =>({
+           wrongAnswers: prevState.wrongAnswers + 1,
+           currentQuestionIndex: prevState.currentQuestionIndex + 1,
+           numberOfAnsweredQuestions: prevState.numberOfAnsweredQuestions + 1
+        }), ()=> {
+            this.displayQuestions(this.state.questions, this.state.currentQuestion, this.state.nextQuestion, this.state.previousQuestion)
+        });
+    }
           
     render () {
         const { currentQuestion } = this.state;
@@ -73,13 +116,13 @@ class Play extends Component {
                     <h5>{currentQuestion.question}</h5>
                 
                    <div className="options-container">
-                        <p className="option">{currentQuestion.optionA}</p>
-                        <p className="option">{currentQuestion.optionB}</p>
+                        <p onClick={this.handleOptionClick} className="option">{currentQuestion.optionA}</p>
+                        <p  onClick={this.handleOptionClick}className="option">{currentQuestion.optionB}</p>
                   </div>
 
                   <div className="options-container">
-                        <p className="option">{currentQuestion.optionC}</p>
-                        <p className="option">{currentQuestion.optionD}</p>
+                        <p onClick={this.handleOptionClick} className="option">{currentQuestion.optionC}</p>
+                        <p onClick={this.handleOptionClick} className="option">{currentQuestion.optionD}</p>
                   </div>
                   <div className="button-container">
                       <button>Previous</button>
