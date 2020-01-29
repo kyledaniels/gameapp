@@ -4,6 +4,10 @@ import M from 'materialize-css';
 
 import questions from '../../questions.json';
 import isEmpty from '../../utils/is-empty';
+import correctNotification from '../../assets/audio/crash.mp3';
+import wrongNotification from '../../assets/audio/kick-bass.mp3';
+import buttonSound from '../../assets/audio/snare.mp3';
+
 
 class Play extends Component {
     constructor (props) {
@@ -44,6 +48,7 @@ class Play extends Component {
                   currentQuestion,
                   nextQuestion,
                   previousQuestion,
+                  numberOfQuestions: questions.length,
                   answer
               });
           }
@@ -51,13 +56,24 @@ class Play extends Component {
 
       handleOptionClick =(e) => {
          if (e.target.innerHTML.toLowerCase()=== this.state.answer.toLowerCase()){
+             document.getElementById('correct-sound').play();
             this.correctAnswer();
             } 
             else {
+             document.getElementById('wrong-sound').play();
                 this.wrongAnswer()
             }
         
         
+      }
+
+      handleButtonClick = ()=> {
+          this.playButtonSound();
+
+      };
+
+      playButtonSound = () =>{
+          document.getElementById('button-sound').play();
       }
 
       correctAnswer = () =>{
@@ -93,10 +109,15 @@ class Play extends Component {
     }
           
     render () {
-        const { currentQuestion } = this.state;
+        const { currentQuestion, currentQuestionIndex, numberOfQuestions } = this.state;
         return(
             <Fragment>
                 <Helmet><title>Quiz Page</title></Helmet>
+                <Fragment>
+                    <audio id="correct-sound" src={correctNotification}></audio>
+                    <audio id="wrong-sound" src={wrongNotification}></audio>
+                    <audio id="button-sound" src={buttonSound}></audio>
+                </Fragment>
                 <div className="questions">
                     <div className="lifeline-container">
                         <p>
@@ -108,7 +129,7 @@ class Play extends Component {
                     </div>
                     <div>
                         <p>
-                            <span>1 of 15</span>
+                            <span>{currentQuestionIndex + 1} of {numberOfQuestions}</span>
                             <span className="mdi mdi-clock-outline mdi-24px">Clock will go here</span>
                         </p>
                     </div>
@@ -125,9 +146,9 @@ class Play extends Component {
                         <p onClick={this.handleOptionClick} className="option">{currentQuestion.optionD}</p>
                   </div>
                   <div className="button-container">
-                      <button>Previous</button>
-                      <button>Next</button>
-                      <button>QuitGame</button>
+                      <button onClick={this.handleButtonClick}>Previous</button>
+                      <button onClick={this.handleButtonClick}>Next</button>
+                      <button onClick={this.handleButtonClick}>QuitGame</button>
                   </div>
                 </div>
             </Fragment>

@@ -8,6 +8,7 @@ const Home = () =>  (
 
     <Fragment>
         <Helmet><title>Quiz App-Home</title></Helmet>
+    
     <div id="home">
         <section>
         <div>
