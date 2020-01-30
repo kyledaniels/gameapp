@@ -15,23 +15,20 @@
     font-size: 18px;
 }
 .signin-input {
-    margin-left: 10px;
     margin-bottom: 10px;
     border-radius: 2px;
     padding-left: 5px 10px;
 }
 .password-input {
-    margin-left: 14px;
     border-radius: 2px;
     padding-left: 5px 10px;
 }
 .signin-btn {
-    border-radius: 2px;
-    margin: 5px 0 10px 87px;
-    padding: 3px 55px;
+    border-radius: 6px;
+    margin: 15px 0 10px 0px;
+    padding: 3px 58px;
 }
 .email-input {
-    margin-left: 10px;
     margin-bottom: 10px;
     border-radius: 2px;
     padding-left: 5px 10px;
@@ -43,11 +40,28 @@
     padding-left: 5px 10px;
 }
 .register-password {
-    margin-left: 10px;
     margin-bottom: 10px;
     border-radius: 2px;
     padding-left: 5px 10px;
 }
 .register-btn {
-    margin: 10px;
+    padding: 3px 15px;
+    border-radius: 6px;
+    color: rgb(97, 97, 97);
+    margin-top: 50px;
+}
+.start-btn {
+    padding: 3px 15px;
+    border-radius: 6px;
+    color: rgb(97, 97, 97);
+    margin-top: 50px;
+}
+#c-img2 {
+    margin-left: 10px;
+}
+#c-img3 {
+    margin-left: 10px;
+}
+#c-img4 {
+    margin-left: 10px;
 }

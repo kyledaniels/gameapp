@@ -19,7 +19,7 @@ const Home = () =>  (
     <div className ="play-button-container inner-container">
     {/* <p className="signin-text">Sign In</p> */}
             <div className="input-group">
-              <label htmlFor="username" className="githubusername">Username</label>
+              <label htmlFor="username" className="githubemail">Github Email</label><br></br>
               <input
                 type="text"
                 name="username"
@@ -27,7 +27,7 @@ const Home = () =>  (
                 placeholder="Username"/>
             </div>
             <div className="input-group">
-              <label htmlFor="password" className="githubpassword">Password</label>
+              <label htmlFor="password" className="githubpassword">Password</label><br></br>
               <input
                 type="password"
                 name="password"
@@ -45,7 +45,7 @@ const Home = () =>  (
           <div className="Registration-box">
             <div className="input-group">
             <p htmlFor="github-email">Enter email associated with your Github</p>
-            <label htmlFor="Email">Github Email</label>
+            <label htmlFor="Email">Github Email</label><br></br>
             <input
                 type="text"
                 name="Email"
@@ -62,26 +62,29 @@ const Home = () =>  (
                 placeholder="Character's name"/>
             </div> */}
             <div className="input-group">
-              <p className="register-password">Create a password</p>
-              <label htmlFor="register-password">Password</label>
+              {/* <p className="create-password">Github Password</p> */}
+              <label htmlFor="Git-password">Github Password</label><br></br>
               <input
                 type="password"
                 name="register-password"
                 className="register-password"
-                placeholder="Register password"/>
+                placeholder="Github password"/>
                 <br></br>
-                <button className="register-btn character-img" type="submit">Register</button>
-                <button className="register-btn character-img" type="submit">Register</button>
-                <button className="register-btn character-img" type="submit">Register</button>
-                <button className="register-btn character-img" type="submit">Register</button>
+                <button className="register-btn" id="c-img1" type="submit">Register</button>
+                <button className="register-btn" id="c-img2" type="submit">Register</button>
+                <button className="register-btn" id="c-img3" type="submit">Register</button>
+                <button className="register-btn" id="c-img4" type="submit">Register</button>
             </div>
           </div>
           </div>
-        <button className="start-btn" type="submit"><a href="/play/quiz">Start Game</a></button>
-    <div className="auth-container">
+        <button className="start-btn" id="c-img1" type="submit"><a href="/play/quiz">Start Game</a></button>
+        <button className="start-btn" id="c-img2" type="submit"><a href="/play/quiz">Start Game</a></button>
+        <button className="start-btn" id="c-img3" type="submit"><a href="/play/quiz">Start Game</a></button>
+        <button className="start-btn" id="c-img4" type="submit"><a href="/play/quiz">Start Game</a></button>
+    {/* <div className="auth-container">
         <Link to="/login">Login</Link>
         <Link to="/register">Register</Link>
-    </div>
+    </div> */}
     </section>
     </div>
     </Fragment>
