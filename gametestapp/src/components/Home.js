@@ -9,7 +9,8 @@ const Home = () =>  (
 
     <Fragment>
         <Helmet><title>Quiz App-Home</title></Helmet>
-    <div id="home" className="github-container">
+    
+    <div id="home"className="github-container">
         <section>
         <div>
            <span className="mdi mdi-cube-outline mdi-48px"></span>

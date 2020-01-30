@@ -3,6 +3,9 @@ import { Helmet } from 'react-helmet';
 import M from 'materialize-css';
 import questions from '../../questions.json';
 import isEmpty from '../../utils/is-empty';
+import correctNotification from '../../assets/audio/crash.mp3';
+import wrongNotification from '../../assets/audio/kick-bass.mp3';
+import buttonSound from '../../assets/audio/snare.mp3';
 import "./playstyle.css";
 
 class Play extends Component {
@@ -44,6 +47,7 @@ class Play extends Component {
                   currentQuestion,
                   nextQuestion,
                   previousQuestion,
+                  numberOfQuestions: questions.length,
                   answer
               });
           }
@@ -51,13 +55,68 @@ class Play extends Component {
 
       handleOptionClick =(e) => {
          if (e.target.innerHTML.toLowerCase()=== this.state.answer.toLowerCase()){
+             document.getElementById('correct-sound').play();
             this.correctAnswer();
             } 
             else {
+             document.getElementById('wrong-sound').play();
                 this.wrongAnswer()
-            }
-        
-        
+            } 
+      }
+
+      handleNextButtonClick = ()=>{
+          this.playButtonSound();
+          if (this.state.nextQuestion !== undefined){
+             this.setState(prevState => ({
+                 currentQuestionIndex: prevState.currentQuestionIndex + 1
+             }), ()=>{
+                 this.displayQuestions(this.state.state, this.state.currentQuestion, this.state.nextQuestion, this.state.previousQuestion);
+             });
+          }
+      };
+
+      handlePreviousButtonClick = ()=>{
+        this.playButtonSound();
+        if (this.state.previousQuestion !== undefined){
+           this.setState(prevState => ({
+               currentQuestionIndex: prevState.currentQuestionIndex - 1
+           }), ()=>{
+               this.displayQuestions(this.state.state, this.state.currentQuestion, this.state.nextQuestion, this.state.previousQuestion);
+           });
+        }
+    };
+
+       handleQuitButtonClick = ()=> {
+           this.playButtonSound();
+           if (window.confirm('Are You Sure You Want To End Your Game?')){
+               this.props.history.push('/');
+              
+           }
+       };
+
+      handleButtonClick = (e)=> {
+          switch (e.target.id){
+              case 'next-button':
+                  this.handleNextButtonClick();
+                  break;
+
+              case 'previous-button':
+                this.handlePreviousButtonClick();
+                break;
+
+             case 'quit-button':
+                this.handleQuitButtonClick();
+                break;
+
+              default:
+                 break;
+          }
+          
+
+      };
+
+      playButtonSound = () =>{
+          document.getElementById('button-sound').play();
       }
 
       correctAnswer = () =>{
@@ -91,25 +150,56 @@ class Play extends Component {
             this.displayQuestions(this.state.questions, this.state.currentQuestion, this.state.nextQuestion, this.state.previousQuestion)
         });
     }
+
+    handleHints = () =>{
+        const options = Array.from(document.querySelectorAll('.option'));
+        let indexOfAnswer;
+
+        options.forEach((option, index)=>{
+            if(option.innerHTML.toLowerCase() === this.state.answer.toLowerCase()){
+                indexOfAnswer = index;
+            }
+        });
+        
+        while (true){
+            const randomNumber = Math.round(Math.random() * 3);
+            if (randomNumber !== indexOfAnswer) {
+                options.forEach((option, index)=> {
+                     if (index === randomNumber) {
+                         option.style.visibility = 'hidden';
+                     }
+                     this.setState(()=>{});
+                });
+            }
+        }
+    }
           
     render () {
-        const { currentQuestion } = this.state;
+        const { currentQuestion, currentQuestionIndex, hints, numberOfQuestions } = this.state;
         return(
             <Fragment>
                 <Helmet><title>Quiz Page</title></Helmet>
+                <Fragment>
+                    <audio id="correct-sound" src={correctNotification}></audio>
+                    <audio id="wrong-sound" src={wrongNotification}></audio>
+                    <audio id="button-sound" src={buttonSound}></audio>
+                </Fragment>
                 <div className="questions quiz-continer">
                     <div className="lifeline-container">
                         <p>
                     <span className=" mdi-set-center mdi-24px lifeline-icon">Life-Line</span>2
                         </p>
                         <p>
-                    <span className=" mdi mdi-lightbulb-on-outline mdi-24px lifeline-icon">Light Bulb</span>
+                    <span onClick={this.handleHints} className=" mdi mdi-lightbulb-on-outline mdi-24px lifeline-icon"></span> 
+                            <span >{hints}</span>
                         </p>
                     </div>
-                    <div>
+                    {/* <span>1 of 15</span>
+                            <span className="mdi mdi-clock-outline mdi-24px">Clock will go here [[possibly]]</span> */}
+                    <div className="timer-container">
                         <p>
-                            <span>1 of 15</span>
-                            <span className="mdi mdi-clock-outline mdi-24px">Clock will go here [[possibly]]</span>
+                            <span>{currentQuestionIndex + 1} of {numberOfQuestions}</span>
+                            <span className="mdi mdi-clock-outline mdi-24px">Clock will go here</span>
                         </p>
                     </div>
 
@@ -125,9 +215,10 @@ class Play extends Component {
                         <button className="option-btn"><p onClick={this.handleOptionClick} className="option">{currentQuestion.optionD}</p></button>
                   </div>
                   <div className="button-container">
-                      {/* <button>Previous</button>
-                      <button>Next</button> */}
-                      <button className="quit" type="submit"><a href="/">Quit Game</a></button>
+                      <button id="previous-button" onClick={this.handleButtonClick}>Previous</button>
+                      <button id="next-button"     onClick={this.handleButtonClick}>Next</button>
+                      <button id="quit-button"     onClick={this.handleButtonClick}>QuitGame</button>
+                      {/* <button className="quit" type="submit"><a href="/">Quit Game</a></button> */}
                   </div>
                 </div>
             </Fragment>
