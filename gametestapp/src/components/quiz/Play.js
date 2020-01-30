@@ -62,13 +62,57 @@ class Play extends Component {
             else {
              document.getElementById('wrong-sound').play();
                 this.wrongAnswer()
-            }
-        
-        
+            } 
       }
 
-      handleButtonClick = ()=> {
+      handleNextButtonClick = ()=>{
           this.playButtonSound();
+          if (this.state.nextQuestion !== undefined){
+             this.setState(prevState => ({
+                 currentQuestionIndex: prevState.currentQuestionIndex + 1
+             }), ()=>{
+                 this.displayQuestions(this.state.state, this.state.currentQuestion, this.state.nextQuestion, this.state.previousQuestion);
+             });
+          }
+      };
+
+      handlePreviousButtonClick = ()=>{
+        this.playButtonSound();
+        if (this.state.previousQuestion !== undefined){
+           this.setState(prevState => ({
+               currentQuestionIndex: prevState.currentQuestionIndex - 1
+           }), ()=>{
+               this.displayQuestions(this.state.state, this.state.currentQuestion, this.state.nextQuestion, this.state.previousQuestion);
+           });
+        }
+    };
+
+       handleQuitButtonClick = ()=> {
+           this.playButtonSound();
+           if (window.confirm('Are You Sure You Want To End Your Game?')){
+               this.props.history.push('/');
+              
+           }
+       };
+
+      handleButtonClick = (e)=> {
+          switch (e.target.id){
+              case 'next-button':
+                  this.handleNextButtonClick();
+                  break;
+
+              case 'previous-button':
+                this.handlePreviousButtonClick();
+                break;
+
+             case 'quit-button':
+                this.handleQuitButtonClick();
+                break;
+
+              default:
+                 break;
+          }
+          
 
       };
 
@@ -107,9 +151,32 @@ class Play extends Component {
             this.displayQuestions(this.state.questions, this.state.currentQuestion, this.state.nextQuestion, this.state.previousQuestion)
         });
     }
+
+    handleHints = () =>{
+        const options = Array.from(document.querySelectorAll('.option'));
+        let indexOfAnswer;
+
+        options.forEach((option, index)=>{
+            if(option.innerHTML.toLowerCase() === this.state.answer.toLowerCase()){
+                indexOfAnswer = index;
+            }
+        });
+        
+        while (true){
+            const randomNumber = Math.round(Math.random() * 3);
+            if (randomNumber !== indexOfAnswer) {
+                options.forEach((option, index)=> {
+                     if (index === randomNumber) {
+                         option.style.visibility = 'hidden';
+                     }
+                     this.setState(()=>{});
+                });
+            }
+        }
+    }
           
     render () {
-        const { currentQuestion, currentQuestionIndex, numberOfQuestions } = this.state;
+        const { currentQuestion, currentQuestionIndex, hints, numberOfQuestions } = this.state;
         return(
             <Fragment>
                 <Helmet><title>Quiz Page</title></Helmet>
@@ -124,10 +191,12 @@ class Play extends Component {
                     <span className=" mdi-set-center mdi-24px lifeline-icon">Life-Line</span>2
                         </p>
                         <p>
-                    <span className=" mdi mdi-lightbulb-on-outline mdi-24px lifeline-icon">Light Bulb</span>
+                    <span onClick={this.handleHints} className=" mdi mdi-lightbulb-on-outline mdi-24px lifeline-icon"></span> 
+                            <span >{hints}</span>
                         </p>
                     </div>
-                    <div>
+                
+                    <div className="timer-container">
                         <p>
                             <span>{currentQuestionIndex + 1} of {numberOfQuestions}</span>
                             <span className="mdi mdi-clock-outline mdi-24px">Clock will go here</span>
@@ -146,9 +215,9 @@ class Play extends Component {
                         <p onClick={this.handleOptionClick} className="option">{currentQuestion.optionD}</p>
                   </div>
                   <div className="button-container">
-                      <button onClick={this.handleButtonClick}>Previous</button>
-                      <button onClick={this.handleButtonClick}>Next</button>
-                      <button onClick={this.handleButtonClick}>QuitGame</button>
+                      <button id="previous-button" onClick={this.handleButtonClick}>Previous</button>
+                      <button id="next-button"     onClick={this.handleButtonClick}>Next</button>
+                      <button id="quit-button"     onClick={this.handleButtonClick}>QuitGame</button>
                   </div>
                 </div>
             </Fragment>
