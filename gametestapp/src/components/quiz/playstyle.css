@@ -1,0 +1,13 @@
+.quiz-continer {
+    background-color: blueviolet;
+    width: 50vw;
+    height: 80vh;
+    margin: 60px 445px;
+    border-radius: 8px;
+}
+.option:hover {
+    border: 1px solid white;
+}
+.options-container {
+    margin-left: 200px;
+}

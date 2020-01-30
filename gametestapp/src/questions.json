@@ -1,29 +1,28 @@
 [
     {
-        "question": "What temperature does water boil at?",
-        "optionA": "50 degrees Celcius",
-        "optionB": "25 degrees Celcius",
-        "optionC": "100 degrees Celcius",
-        "optionD": "150 degrees Celcius",
-        "answer": "100 degrees Celcius"
+        "question": "What is npm?",
+        "optionA": "Backend JavaScript",
+        "optionB": "Node Package Manager",
+        "optionC": "Node Project Manager",
+        "optionD": "Javascript Server",
+        "answer": "Node Package Manager"
     },
 
     {
-        "question": "Who wrote Julius Caesar, Macbeth and Hamlet?",
-        "optionA": "Wole Soyinka",
-        "optionB": "William Shakespeare",
-        "optionC": "Ngozi Chimamanda Adichie",
-        "optionD": "Dan Brown",
-        "answer": "William Shakespeare"
+        "question": "What are the technical languages that are needed to be a front-end developer?",
+        "optionA": "HTML, CSS, JavaScript & JQuery",
+        "optionB": "React, Node & MYSQL",
+        "optionC": "HTML, Python, Java & C++",
+        "optionD": "HTML5, SASS, & PHP",
+        "answer": "HTML, CSS, JavaScript & JQuery"
     },
 
     {
-        "question": "What did the crocodile swallow in Peter Pan?",
-        "optionA": "A Book",
-        "optionB": "A Computer",
-        "optionC": "A pair of shoes",
-        "optionD": "Alarm Clock",
-        "answer": "Alarm Clock"
+        "question": " Does CSS stands for Cascading Style Sheet?",
+        "optionA": "True",
+        "optionB": "False",
+        "optionC": "",
+        "answer": "True"
     },
 
     {

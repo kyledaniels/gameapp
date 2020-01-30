@@ -1,9 +1,9 @@
 import React, { Component, Fragment } from 'react';
 import { Helmet } from 'react-helmet';
 import M from 'materialize-css';
-
 import questions from '../../questions.json';
 import isEmpty from '../../utils/is-empty';
+import "./playstyle.css";
 
 class Play extends Component {
     constructor (props) {
@@ -97,7 +97,7 @@ class Play extends Component {
         return(
             <Fragment>
                 <Helmet><title>Quiz Page</title></Helmet>
-                <div className="questions">
+                <div className="questions quiz-continer">
                     <div className="lifeline-container">
                         <p>
                     <span className=" mdi-set-center mdi-24px lifeline-icon">Life-Line</span>2
@@ -109,25 +109,25 @@ class Play extends Component {
                     <div>
                         <p>
                             <span>1 of 15</span>
-                            <span className="mdi mdi-clock-outline mdi-24px">Clock will go here</span>
+                            <span className="mdi mdi-clock-outline mdi-24px">Clock will go here [[possibly]]</span>
                         </p>
                     </div>
 
-                    <h5>{currentQuestion.question}</h5>
+                    <h5 className="question-title">{currentQuestion.question}</h5>
                 
                    <div className="options-container">
-                        <p onClick={this.handleOptionClick} className="option">{currentQuestion.optionA}</p>
-                        <p  onClick={this.handleOptionClick}className="option">{currentQuestion.optionB}</p>
+                        <button className="option-btn"><p onClick={this.handleOptionClick} className="option">{currentQuestion.optionA}</p></button><br></br>
+                        <button className="option-btn"><p  onClick={this.handleOptionClick}className="option">{currentQuestion.optionB}</p></button>
                   </div>
 
                   <div className="options-container">
-                        <p onClick={this.handleOptionClick} className="option">{currentQuestion.optionC}</p>
-                        <p onClick={this.handleOptionClick} className="option">{currentQuestion.optionD}</p>
+                        <button className="option-btn"><p onClick={this.handleOptionClick} className="option">{currentQuestion.optionC}</p></button><br></br>
+                        <button className="option-btn"><p onClick={this.handleOptionClick} className="option">{currentQuestion.optionD}</p></button>
                   </div>
                   <div className="button-container">
-                      <button>Previous</button>
-                      <button>Next</button>
-                      <button>QuitGame</button>
+                      {/* <button>Previous</button>
+                      <button>Next</button> */}
+                      <button className="quit" type="submit"><a href="/">Quit Game</a></button>
                   </div>
                 </div>
             </Fragment>
