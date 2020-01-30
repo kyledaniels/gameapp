@@ -8,16 +8,16 @@ import "./homestyle.css";
 const Home = () =>  (
 
     <Fragment>
-        <Helmet><title>Quiz App-Home</title></Helmet>
+        <Helmet><title>Be A Software Engineer!</title></Helmet>
     
     <div id="home"className="github-container">
         <section>
         <div>
            <span className="mdi mdi-cube-outline mdi-48px"></span>
     </div>
-    <h1 className="header">Quiz App</h1>
+    <h1 className="header">Sign in or Sign Up with Github Account to play .</h1>
     <div className ="play-button-container inner-container">
-    <p className="signin-text">Sign In</p>
+    {/* <p className="signin-text">Sign In</p> */}
             <div className="input-group">
               <label htmlFor="username" className="githubusername">Username</label>
               <input
@@ -52,7 +52,7 @@ const Home = () =>  (
                 className="email-input"
                 placeholder="Github Email"/>
             </div>
-            <div className="input-group">
+            {/* <div className="input-group">
               <p className="register-username">Enter your character's name</p>
               <label htmlFor="register-username">Username</label>
               <input
@@ -60,7 +60,7 @@ const Home = () =>  (
                 name="Character's Name"
                 className="username-input"
                 placeholder="Character's name"/>
-            </div>
+            </div> */}
             <div className="input-group">
               <p className="register-password">Create a password</p>
               <label htmlFor="register-password">Password</label>
@@ -70,10 +70,10 @@ const Home = () =>  (
                 className="register-password"
                 placeholder="Register password"/>
                 <br></br>
-                <button className="register-btn character-img">Register</button>
-                <button className="register-btn character-img">Register</button>
-                <button className="register-btn character-img">Register</button>
-                <button className="register-btn character-img">Register</button>
+                <button className="register-btn character-img" type="submit">Register</button>
+                <button className="register-btn character-img" type="submit">Register</button>
+                <button className="register-btn character-img" type="submit">Register</button>
+                <button className="register-btn character-img" type="submit">Register</button>
             </div>
           </div>
           </div>

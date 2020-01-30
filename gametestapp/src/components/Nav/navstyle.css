@@ -1,7 +1,6 @@
 .main-nav {
-    margin-left: 470px;
+    margin-left: 600px;
     list-style: none;
-    margin-top: 15px;
 }
 
 .main-nav li {
@@ -15,4 +14,16 @@
 }
 .main-nav li a:hover {
     border: 1px solid white;
+}
+@media screen and (max-width: 600px) {
+    .main-nav {
+        float: none;
+        width: 100%;
+    }
+}
+@media screen and (max-width: 300px) {
+    .main-nav {
+        float: left;
+        width: 100%;
+    }
 }

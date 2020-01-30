@@ -178,13 +178,14 @@ class Play extends Component {
         const { currentQuestion, currentQuestionIndex, hints, numberOfQuestions } = this.state;
         return(
             <Fragment>
-                <Helmet><title>Quiz Page</title></Helmet>
+                <Helmet><title>Be A Software Engineer!</title></Helmet>
                 <Fragment>
                     <audio id="correct-sound" src={correctNotification}></audio>
                     <audio id="wrong-sound" src={wrongNotification}></audio>
                     <audio id="button-sound" src={buttonSound}></audio>
                 </Fragment>
                 <div className="questions quiz-continer">
+                    <div className="quiz-inner-container">
                     <div className="lifeline-container">
                         <p>
                     <span className=" mdi-set-center mdi-24px lifeline-icon">Life-Line</span>2
@@ -215,11 +216,13 @@ class Play extends Component {
                         <button className="option-btn"><p onClick={this.handleOptionClick} className="option">{currentQuestion.optionD}</p></button>
                   </div>
                   <div className="button-container">
-                      <button id="previous-button" onClick={this.handleButtonClick}>Previous</button>
-                      <button id="next-button"     onClick={this.handleButtonClick}>Next</button>
-                      <button id="quit-button"     onClick={this.handleButtonClick}>QuitGame</button>
+                      <button id="previous-button" className="nav-btn" onClick={this.handleButtonClick}>Previous</button>
+                      <button id="next-button" className="nav-btn" onClick={this.handleButtonClick}>Next</button>
+                      <button id="quit-button" className="nav-btn" onClick={this.handleButtonClick}>Quit</button>
                       {/* <button className="quit" type="submit"><a href="/">Quit Game</a></button> */}
                   </div>
+                    </div>
+
                 </div>
             </Fragment>
            

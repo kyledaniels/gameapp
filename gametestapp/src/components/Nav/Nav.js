@@ -8,7 +8,7 @@ function Nav() {
                 <ul className="nav-names">
                     <li><a href="/">Home</a></li>
                     <li><a href="/play/quiz">Game Page</a></li>
-                    <li><a href="/profile">Profile</a></li>
+                    {/* <li><a href="/profile">Profile</a></li> */}
                 </ul>
             </div>
         </div>
