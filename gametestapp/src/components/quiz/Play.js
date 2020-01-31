@@ -27,6 +27,7 @@ class Play extends Component {
             hints:5,
             fiftyFifty:2,
             usedFiftyFifty:false,
+            previousRandomNumbers: [],
             time:{}
         };      
     }
@@ -49,7 +50,10 @@ class Play extends Component {
                   nextQuestion,
                   previousQuestion,
                   numberOfQuestions: questions.length,
-                  answer
+                  answer,
+                  previousRandomNumbers: []
+              }, () => {
+                  this.showOptions();
               });
           }
       };
@@ -151,29 +155,45 @@ class Play extends Component {
             this.displayQuestions(this.state.questions, this.state.currentQuestion, this.state.nextQuestion, this.state.previousQuestion)
         });
     }
+     showOptions = () => {
+         const options = Array.from(document.querySelectorAll('.option'));
 
-    handleHints = () =>{
-        const options = Array.from(document.querySelectorAll('.option'));
-        let indexOfAnswer;
+         options.forEach(option => {
+             option.style.visibility = 'visible';
+         })
+     }
+     handleHints = () => {
+         if (this.state.hints > 0){
+           
+            const options = Array.from(document.querySelectorAll('.option'));
+            let indexOfAnswer;       
+   
+            options.forEach((option, index) => {
+                if (option.innerHTML.toLowerCase()=== this.state.answer.toLowerCase()){
+                    indexOfAnswer = index;
+                }
+            });
+   
+            while (true) {
+                const randomNumber = Math.round(Math.random() * 3);
+                if (randomNumber !== indexOfAnswer && !this.state.previousRandomNumbers.includes(randomNumber)){
+                    options.forEach((option, index) => {
+                        if (index === randomNumber) {
+                            option.style.visibility = 'hidden';
+                            this.setState((prevState)=>({
+                               hints: prevState.hints - 1,
+                               previousRandomNumbers: prevState.previousRandomNumbers.concat(randomNumber)
+                            }));
+                        }
+                    });
+                    break;
+                }
+                if (this.state.previousRandomNumbers.length >= 3) break;
+            }  
 
-        options.forEach((option, index)=>{
-            if(option.innerHTML.toLowerCase() === this.state.answer.toLowerCase()){
-                indexOfAnswer = index;
-            }
-        });
-        
-        while (true){
-            const randomNumber = Math.round(Math.random() * 3);
-            if (randomNumber !== indexOfAnswer) {
-                options.forEach((option, index)=> {
-                     if (index === randomNumber) {
-                         option.style.visibility = 'hidden';
-                     }
-                     this.setState(()=>{});
-                });
-            }
-        }
-    }
+         }
+         
+     }
           
     render () {
         const { currentQuestion, currentQuestionIndex, hints, numberOfQuestions } = this.state;
