@@ -33,6 +33,10 @@ class Play extends Component {
             time:{}
         };     
         this.interval = null 
+        this.correctSound = React.createRef();
+        this.wrongSound = React.createRef();
+        this.buttonSound = React.createRef();
+
     }
 
     componentDidMount () {
@@ -41,7 +45,9 @@ class Play extends Component {
         this.startTimer();
     }
 
-    
+    componentWillMount (){
+        clearInterval(this.interval);
+    }
 
       displayQuestions = (questions = this.state.questions, currentQuestion, nextQuestion, previousQuestion) => {
           let {currentQuestionIndex} = this.state; 
@@ -67,11 +73,15 @@ class Play extends Component {
 
       handleOptionClick =(e) => {
          if (e.target.innerHTML.toLowerCase()=== this.state.answer.toLowerCase()){
-             document.getElementById('correct-sound').play();
+             this.correctTimeout = setTimeout(()=> {
+                 this.correctSound.current.play();
+             }, 500)
             this.correctAnswer();
             } 
             else {
-             document.getElementById('wrong-sound').play();
+             this.wrongTimeout = setTimeout(()=> {
+                 this.wrongSound.current.play();
+             }, 500)
                 this.wrongAnswer()
             } 
       }
@@ -128,7 +138,7 @@ class Play extends Component {
       };
 
       playButtonSound = () =>{
-          document.getElementById('button-sound').play();
+          this.buttonSound.current.play();
       }
 
       correctAnswer = () =>{
@@ -321,7 +331,7 @@ class Play extends Component {
          };
          console.log(playerStats);
          setTimeout(() => {
-             this.props.history.push('/');
+             this.props.history.push('/play/quizSummary', playerStats);
          }, 1000);
      }
           
@@ -338,9 +348,9 @@ class Play extends Component {
             <Fragment>
                 <Helmet><title>Quiz Page</title></Helmet>
                 <Fragment>
-                    <audio id="correct-sound" src={correctNotification}></audio>
-                    <audio id="wrong-sound" src={wrongNotification}></audio>
-                    <audio id="button-sound" src={buttonSound}></audio>
+                    <audio ref={this.correctSound} src={correctNotification}></audio>
+                    <audio  ref={this.wrongSound}src={wrongNotification}></audio>
+                    <audio ref={this.buttonSound} src={buttonSound}></audio>
                 </Fragment>
                 <div className="questions">
                     <div className="lifeline-container">
