@@ -192,7 +192,7 @@ class Play extends Component {
                         </p>
                         <p>
                     <span onClick={this.handleHints} className=" mdi mdi-lightbulb-on-outline mdi-24px lifeline-icon"></span> 
-                            <span >{hints}</span>
+                            <span>{hints}</span>
                         </p>
                     </div>
                     {/* <span>1 of 15</span>

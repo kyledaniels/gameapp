@@ -1,0 +1,23 @@
+[ 
+    {
+        "id": 1,
+        "character": "African American Girl",
+        "image": "characters-01.png"
+    },
+    {
+        "id": 2,
+        "character": "European American Girl",
+        "image": "characters-02.png"
+    },
+    {
+        "id": 3,
+        "character": "Asian Amerian Boy",
+        "image": "characters-03.png"
+    },
+    {
+        "id": 4,
+        "character": "European American Boy",
+        "image": "characters-04.png"
+    }
+
+]
