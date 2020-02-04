@@ -43,11 +43,12 @@ class Play extends Component {
         const { questions, currentQuestion, nextQuestion, previousQuestion } = this.state;
         this.displayQuestions(questions,currentQuestion,nextQuestion, previousQuestion);
         this.startTimer();
-    }
-
-    componentWillMount (){
         clearInterval(this.interval);
     }
+
+   
+       
+    
 
       displayQuestions = (questions = this.state.questions, currentQuestion, nextQuestion, previousQuestion) => {
           let {currentQuestionIndex} = this.state; 
@@ -323,7 +324,7 @@ class Play extends Component {
          const playerStats = {
              score: state.score,
              numberofQuestions: state.numberOfQuestions,
-             numberOfAnsweredQuestions: state.numberOfAnsweredQuestions,
+             numberOfAnsweredQuestions: state.numberOfQuestions - (state.correctAnswers + state.wrongAnswers),
              correctAnswers: state.correctAnswers,
              wrongAnswers: state.wrongAnswers,
              fiftyFiftyUsed: 2 - state.fiftyFifty, 

@@ -61,19 +61,19 @@ class QuizSummary extends Component {
                 <span className="right">{this.state.numberOfQuestions}</span><br></br>
                        
                 <span className="stat left">Number of Attempted Questions:</span>
-                <span className="right">{this.state.numberOfQuestions}</span><br></br>
+                <span className="right">{this.state.numberOfAnsweredQuestions}</span><br></br>
 
-                <span className="stat left">Total Number of Questions:</span>
-                <span className="right">{this.state.numberOfQuestions}</span><br></br>
+                <span className="stat left">Number of Correct Answers:</span>
+                <span className="right">{this.state.correctAnswers}</span><br></br>
 
-                <span className="stat left">Total Number of Questions:</span>
-                <span className="right">{this.state.numberOfQuestions}</span><br></br>
+                <span className="stat left">Number of Wrong Answers:</span>
+                <span className="right">{this.state.wrongAnswers}</span><br></br>
 
-                <span className="stat left">Total Number of Questions:</span>
-                <span className="right">{this.state.numberOfQuestions}</span><br></br>
+                <span className="stat left">Hints Used:</span>
+                <span className="right">{this.state.usedHints}</span><br></br>
 
-                <span className="stat left">Total Number of Questions:</span>
-                <span className="right">{this.state.numberOfQuestions}</span>
+                <span className="stat left">50/50 Used:</span>
+                <span className="right">{this.state.usedFiftyFifty}</span>
             </div>
             <section>
                 <ul>
