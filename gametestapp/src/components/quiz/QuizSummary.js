@@ -59,8 +59,8 @@ class QuizSummary extends Component {
                 <h2>Your Score: {this.state.score.toFixed(0)}&#37;</h2>
                 <span className="stat left">Total Number of Questions:</span>
                 <span className="right">{this.state.numberOfQuestions}</span><br></br>
-
-                <span className="stat left">Total Number of Questions:</span>
+                       
+                <span className="stat left">Number of Attempted Questions:</span>
                 <span className="right">{this.state.numberOfQuestions}</span><br></br>
 
                 <span className="stat left">Total Number of Questions:</span>
