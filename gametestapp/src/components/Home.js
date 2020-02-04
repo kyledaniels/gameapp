@@ -19,7 +19,8 @@ const Home = () =>  (
         <div>
            <span className="mdi mdi-cube-outline mdi-48px"></span>
     </div>
-    <h1 className="header">Sign in or Sign Up with Github Account to play .</h1>
+    <h1 className="header">Sign in or Sign Up with Github Account to play.</h1>
+    <p>Sign into your github page to play the game to start the game or sign up <br></br>and pick your character to start the game...GOOD LUCK!</p>
     <div className ="play-button-container inner-container">
     {/* <p className="signin-text">Sign In</p> */}
             <div className="input-group">
@@ -73,19 +74,18 @@ const Home = () =>  (
                 name="register-password"
                 className="register-password"
                 placeholder="Github password"/>
-                {/* <br></br>
-                <button className="register-btn" id="c-img1" type="submit">Register</button>
+                <br></br>
+                {/* <button className="register-btn" id="c-img1" type="submit">Register</button>
                 <button className="register-btn" id="c-img2" type="submit">Register</button>
                 <button className="register-btn" id="c-img3" type="submit">Register</button>
                 <button className="register-btn" id="c-img4" type="submit">Register</button> */}
             </div>
           </div>
-        <a href="/play/quiz"><img src={characterswb} alt="character4" id="white-boy"/></a>
+          </div>
+          <a href="/play/quiz"><img src={characterswb} alt="character4" id="white-boy"/></a>
         <a href="/play/quiz"><img src={charactersab} alt="character3" id="asian-boy"/></a>
         <a href="/play/quiz"><img src={characterswg} alt="character2" id="white-girl"/></a>
         <a href="/play/quiz"><img src={characterbg} alt="character1" id="black-girl"/></a>
-          </div>
-        
         
     {/* <div className="auth-container">
         <Link to="/login">Login</Link>

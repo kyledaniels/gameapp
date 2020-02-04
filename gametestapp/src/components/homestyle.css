@@ -1,7 +1,10 @@
+body {
+    font-family: 'Gelasio', serif;
+}
 .github-container {
     background-color: blueviolet;
     width: 50vw;
-    height: 80vh;
+    height: 85vh;
     margin: 60px 445px;
     border-radius: 8px;
 }
@@ -67,6 +70,10 @@
 }
 #black-girl {
     height: 30vh;
+}
+#black-girl:hover {
+    border-radius: 2px;
+    color: rgb(0, 0, 0);
 }
 #white-girl {
     height: 28vh;

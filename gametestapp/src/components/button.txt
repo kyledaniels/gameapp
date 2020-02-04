@@ -1,0 +1,21 @@
+<a href="/play/quiz"><img src={characterswb} alt="character4" id="white-boy"/></a>
+        <a href="/play/quiz"><img src={charactersab} alt="character3" id="asian-boy"/></a>
+        <a href="/play/quiz"><img src={characterswg} alt="character2" id="white-girl"/></a>
+        <a href="/play/quiz"><img src={characterbg} alt="character1" id="black-girl"/></a>
+
+        #black-girl {
+    height: 30vh;
+}
+#black-girl:hover {
+    border-radius: 2px;
+    color: rgb(0, 136, 255);
+}
+#white-girl {
+    height: 28vh;
+}
+#asian-boy {
+    height: 28vh;
+}
+#white-boy {
+    height: 28vh;
+}

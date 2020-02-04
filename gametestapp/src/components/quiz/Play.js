@@ -359,8 +359,8 @@ class Play extends Component {
                             <span className="mdi mdi-clock-outline mdi-24px">Clock will go here [[possibly]]</span> */}
                     <div className="timer-container">
                         <p>
-                            <span>{currentQuestionIndex + 1} of {numberOfQuestions}</span>
-                           <span className="right">{time.minutes}:{time.seconds}<span className="mdi mdi-clock-outline mdi-24px">Clock will go here</span></span>
+                            <span>{currentQuestionIndex + 1} of {numberOfQuestions}</span><br></br>
+                           <span className="right">{time.minutes}:{time.seconds}<span className="mdi mdi-clock-outline mdi-24px"></span></span>
                         </p>
                     </div>
 
