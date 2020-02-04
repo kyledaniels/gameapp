@@ -1,6 +1,10 @@
 import React, { Fragment } from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
+import characterbg from "../components/images/characterbg.png";
+import characterswg from "../components/images/characterswg.png";
+import charactersab from "../components/images/charactersab.png";
+import characterswb from "../components/images/characterswb.png";
 import "./homestyle.css";
 
 
@@ -69,18 +73,20 @@ const Home = () =>  (
                 name="register-password"
                 className="register-password"
                 placeholder="Github password"/>
-                <br></br>
+                {/* <br></br>
                 <button className="register-btn" id="c-img1" type="submit">Register</button>
                 <button className="register-btn" id="c-img2" type="submit">Register</button>
                 <button className="register-btn" id="c-img3" type="submit">Register</button>
-                <button className="register-btn" id="c-img4" type="submit">Register</button>
+                <button className="register-btn" id="c-img4" type="submit">Register</button> */}
             </div>
           </div>
+        <a href="/play/quiz"><img src={characterswb} alt="character4" id="white-boy"/></a>
+        <a href="/play/quiz"><img src={charactersab} alt="character3" id="asian-boy"/></a>
+        <a href="/play/quiz"><img src={characterswg} alt="character2" id="white-girl"/></a>
+        <a href="/play/quiz"><img src={characterbg} alt="character1" id="black-girl"/></a>
           </div>
-        <button className="start-btn" id="c-img1" type="submit"><a href="/play/quiz">Start Game</a></button>
-        <button className="start-btn" id="c-img2" type="submit"><a href="/play/quiz">Start Game</a></button>
-        <button className="start-btn" id="c-img3" type="submit"><a href="/play/quiz">Start Game</a></button>
-        <button className="start-btn" id="c-img4" type="submit"><a href="/play/quiz">Start Game</a></button>
+        
+        
     {/* <div className="auth-container">
         <Link to="/login">Login</Link>
         <Link to="/register">Register</Link>
