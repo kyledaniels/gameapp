@@ -21,7 +21,7 @@ class QuizSummary extends Component {
         const {state} = this.props.location;
         if(state){
         this.setState({
-            score:(state.score/state.numberOfQuestions) * 100,
+            score:(state.score/state.numberOfQuestions),
             numberOfQuestions:state.numberOfQuestions,
             numberOfAnsweredQuestions:state.numberOfAnsweredQuestions,
             correctAnswers:state.correctAnswers,
