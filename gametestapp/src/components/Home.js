@@ -82,10 +82,12 @@ const Home = () =>  (
             </div>
           </div>
           </div>
-          <a href="/play/quiz"><img src={characterswb} alt="character4" id="white-boy"/></a>
-        <a href="/play/quiz"><img src={charactersab} alt="character3" id="asian-boy"/></a>
-        <a href="/play/quiz"><img src={characterswg} alt="character2" id="white-girl"/></a>
-        <a href="/play/quiz"><img src={characterbg} alt="character1" id="black-girl"/></a>
+        <div id="start-game">
+          <a href="/play/quiz"><img src={characterbg} alt="character1" id="black-girl" className="character" /></a>
+          <a href="/play/quiz"><img src={charactersab} alt="character3" id="asian-boy" className="character" /></a>
+          <a href="/play/quiz"><img src={characterswg} alt="character2" id="white-girl" className="character" /></a>
+          <a href="/play/quiz"><img src={characterswb} alt="character4" id="white-boy" className="character" /></a>
+        </div>
         
     {/* <div className="auth-container">
         <Link to="/login">Login</Link>

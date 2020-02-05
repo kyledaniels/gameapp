@@ -1,5 +1,5 @@
 html {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.459), rgba(0, 0, 0, 0.603)), url(./images/pexels-photo-270632.jpeg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.459), rgba(0, 0, 0, 0.603)), url(./components/images/pexels-photo-270632.jpeg);
     height: 105vh;
     background-repeat: no-repeat;
     background-size: cover;
@@ -8,5 +8,5 @@ html {
 body {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family: 'Assistant', sans-serif;
 }

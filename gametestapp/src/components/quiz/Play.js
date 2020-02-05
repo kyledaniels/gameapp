@@ -29,18 +29,21 @@ class Play extends Component {
             nextButtonDisabled: false,
             previousButtonDisabled: true,
             previousRandomNumbers: [],
-            time:{}
+            time:{},
+            characters: []
         };     
         this.interval = null 
     }
 
     componentDidMount () {
-        const { questions, currentQuestion, nextQuestion, previousQuestion } = this.state;
-        this.displayQuestions(questions,currentQuestion,nextQuestion, previousQuestion);
+        const { questions, currentQuestion, nextQuestion, previousQuestion, characters } = this.state;
+        this.displayQuestions(questions,currentQuestion,nextQuestion, previousQuestion, characters);
         this.startTimer();
     }
 
-    
+    // displayCharacter = (characters = this.state.characters) => {
+    //     let
+    // }
 
       displayQuestions = (questions = this.state.questions, currentQuestion, nextQuestion, previousQuestion) => {
           let {currentQuestionIndex} = this.state; 
@@ -134,7 +137,7 @@ class Play extends Component {
           M.toast({
               html: 'Correct Answer!!!',
               classes: 'toast-valid',
-              displayLength: 1500
+              displayLength: 4000
           });
           this.setState(prevState =>({
               score: prevState.score + 1,
@@ -155,7 +158,7 @@ class Play extends Component {
         M.toast({
             html: 'Wrong Answer!!!',
             classes: 'toast-valid',
-            displayLength: 1500
+            displayLength: 4000
         });
         this.setState(prevState =>({
            wrongAnswers: prevState.wrongAnswers + 1,
@@ -346,7 +349,7 @@ class Play extends Component {
                     <div className="quiz-inner-container">
                     <div className="lifeline-container">
                         <p>
-                    <span onClick={this.handleFiftyFifty}className=" mdi-set-center mdi-24px lifeline-icon">Life-Line</span>
+                    <span onClick={this.handleFiftyFifty}className=" mdi-set-center mdi-24px lifeline-icon">!!!!</span>
                         <span className="lifeline">{fiftyFifty}</span>
                         </p>
                         <p>
