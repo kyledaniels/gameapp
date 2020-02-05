@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 // Create Schema and Model
 
 const gameSummarySchema = new Schema({
-      score: Number,
+      score: {type: Number, required: true, default: 0},
       numberOfQuestions: Number,
       numberOfAnsweredQuestions: Number,
       correctAnswers: Number,

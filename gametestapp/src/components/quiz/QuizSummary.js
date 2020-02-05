@@ -20,14 +20,15 @@ class QuizSummary extends Component {
     componentDidMount (){
         const {state} = this.props.location;
         if(state){
+        console.log("Setting the values", state.numberOfQuestions)
         this.setState({
-            score:(state.score/state.numberOfQuestions),
             numberOfQuestions:state.numberOfQuestions,
-            numberOfAnsweredQuestions:state.numberOfAnsweredQuestions,
             correctAnswers:state.correctAnswers,
+            score:(state.correctAnswers/state.numberOfQuestions) * 100,
+            numberOfAnsweredQuestions:state.numberOfAnsweredQuestions,
             wrongAnswers:state.wrongAnswers,
             usedHints:state.hintsUsed,
-            usedFiftyFifty:state.fiftyFiftyUsed
+            usedFiftyFifty:state.fiftyFiftyUsed,
         });
     }
 }
@@ -35,14 +36,15 @@ class QuizSummary extends Component {
 
     const {state, score} = this.props.location;
     let stats, remark;
-
-    if (score <= 30){
+    let calculatedScore = (state.correctAnswers/state.numberOfQuestions) * 100
+    console.log(calculatedScore)
+    if (calculatedScore <= 30){
         remark = 'You need more practice!';
-    } else if (score >30 && score <= 50){
+    } else if (calculatedScore >30 && score <= 50){
         remark ="Better luck next time";
-    } else if (score <= 70 && score > 50){
+    } else if (calculatedScore <= 70 && score > 50){
         remark = 'You can do better';
-    } else if (score >=71 && score <=84){
+    } else if (calculatedScore >=71 && score <=84){
         remark = 'You did Great'
     } else {
         remark = 'Your an Software Engineer'
@@ -58,7 +60,7 @@ class QuizSummary extends Component {
                 <h4>{remark}</h4>
                 <h2>Your Score: {this.state.score.toFixed(0)}&#37;</h2>
                 <span className="stat left">Total Number of Questions:</span>
-                <span className="right">{this.state.numberOfQuestions}</span><br></br>
+                <span className="right">{this.state.wrongAnswers + this.state.correctAnswers}</span><br></br>
                        
                 <span className="stat left">Number of Attempted Questions:</span>
                 <span className="right">{this.state.numberOfAnsweredQuestions}</span><br></br>

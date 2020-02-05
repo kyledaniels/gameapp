@@ -1,0 +1,33 @@
+{
+  "name": "gametestapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "concurrently": "^5.1.0",
+    "express": "^4.17.1",
+    "helmet": "^3.21.2",
+    "mongoose": "^5.8.11",
+    "morgan": "^1.9.1",
+    "node": "^13.6.0",
+    "react": "^16.12.0",
+    "react-router-dom": "^5.1.2",
+    "react-helmet": "^5.2.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kyle67/gametestapp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kyle67/gametestapp/issues"
+  },
+  "homepage": "https://github.com/kyle67/gametestapp#readme"
+}
