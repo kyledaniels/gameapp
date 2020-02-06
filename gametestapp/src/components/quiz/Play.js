@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { Helmet } from 'react-helmet';
+import axios from 'axios';
 import M from 'materialize-css';
 import questions from '../../questions.json';
 import isEmpty from '../../utils/is-empty';
@@ -33,17 +34,25 @@ class Play extends Component {
             characters: []
         };     
         this.interval = null 
+        this.correctSound = React.createRef();
+        this.wrongSound = React.createRef();
+        this.buttonSound = React.createRef();
+
     }
 
     componentDidMount () {
         const { questions, currentQuestion, nextQuestion, previousQuestion, characters } = this.state;
         this.displayQuestions(questions,currentQuestion,nextQuestion, previousQuestion, characters);
         this.startTimer();
+       
     }
 
-    // displayCharacter = (characters = this.state.characters) => {
-    //     let
-    // }
+    componentWillMount(){
+    clearInterval(this.interval);
+
+    }
+       
+    
 
       displayQuestions = (questions = this.state.questions, currentQuestion, nextQuestion, previousQuestion) => {
           let {currentQuestionIndex} = this.state; 
@@ -69,11 +78,15 @@ class Play extends Component {
 
       handleOptionClick =(e) => {
          if (e.target.innerHTML.toLowerCase()=== this.state.answer.toLowerCase()){
-             document.getElementById('correct-sound').play();
+             this.correctTimeout = setTimeout(()=> {
+                 this.correctSound.current.play();
+             }, 500)
             this.correctAnswer();
             } 
             else {
-             document.getElementById('wrong-sound').play();
+             this.wrongTimeout = setTimeout(()=> {
+                 this.wrongSound.current.play();
+             }, 500)
                 this.wrongAnswer()
             } 
       }
@@ -130,7 +143,7 @@ class Play extends Component {
       };
 
       playButtonSound = () =>{
-          document.getElementById('button-sound').play();
+          this.buttonSound.current.play();
       }
 
       correctAnswer = () =>{
@@ -314,8 +327,8 @@ class Play extends Component {
          const {state} = this;
          const playerStats = {
              score: state.score,
-             numberofQuestions: state.numberOfQuestions,
-             numberOfAnsweredQuestions: state.numberOfAnsweredQuestions,
+             numberOfQuestions: state.numberOfQuestions,
+             numberOfAnsweredQuestions: (state.correctAnswers + state.wrongAnswers) - state.numberOfQuestions,
              correctAnswers: state.correctAnswers,
              wrongAnswers: state.wrongAnswers,
              fiftyFiftyUsed: 2 - state.fiftyFifty, 
@@ -323,9 +336,35 @@ class Play extends Component {
          };
          console.log(playerStats);
          setTimeout(() => {
-             this.props.history.push('/');
+             this.props.history.push('/play/quizSummary', playerStats);
          }, 1000);
-     }
+     };
+
+     submit = (event) => {
+        event.preventDefault();
+
+        const payload = {
+            score:this.state.score,
+            numberOfQuestions:this.state.wrongAnswers + this.state.correctAnswers,
+            correctAnswers: this.state.correctAnswers,
+            wrongAnswers: this.state.wrongAnswers,
+            usedHints:this.state.usedHints,
+            usedFiftyFifty: this.state.usedFiftyFifty
+        };
+
+        axios ({
+            url:'http://localhost:3001/api/play/quizSummary',
+            method:'POST',
+            data:payload
+        })
+
+        .then(()=>{
+            console.log('Data has been sent to the server');
+        })
+        .catch(()=>{
+            console.log('Internal Server Error');
+        });;
+     };
           
     render () {
         const { 
@@ -341,15 +380,15 @@ class Play extends Component {
             <Fragment>
                 <Helmet><title>Be A Software Engineer!</title></Helmet>
                 <Fragment>
-                    <audio id="correct-sound" src={correctNotification}></audio>
-                    <audio id="wrong-sound" src={wrongNotification}></audio>
-                    <audio id="button-sound" src={buttonSound}></audio>
+                    <audio ref={this.correctSound} src={correctNotification}></audio>
+                    <audio  ref={this.wrongSound}src={wrongNotification}></audio>
+                    <audio ref={this.buttonSound} src={buttonSound}></audio>
                 </Fragment>
                 <div className="questions quiz-continer">
                     <div className="quiz-inner-container">
                     <div className="lifeline-container">
                         <p>
-                    <span onClick={this.handleFiftyFifty}className=" mdi-set-center mdi-24px lifeline-icon">!!!!</span>
+                    <span onClick={this.handleFiftyFifty}className=" mdi-set-center mdi-24px lifeline-icon"><i class="material-icons">lightbulb_outline</i></span>
                         <span className="lifeline">{fiftyFifty}</span>
                         </p>
                         <p>
@@ -362,8 +401,9 @@ class Play extends Component {
                             <span className="mdi mdi-clock-outline mdi-24px">Clock will go here [[possibly]]</span> */}
                     <div className="timer-container">
                         <p>
-                            <span>{currentQuestionIndex + 1} of {numberOfQuestions}</span><br></br>
+                        <i class="material-icons">alarm</i>
                            <span className="right">{time.minutes}:{time.seconds}<span className="mdi mdi-clock-outline mdi-24px"></span></span>
+                           <br></br><span id="question-number">{currentQuestionIndex + 1} of {numberOfQuestions}</span>
                         </p>
                     </div>
 
@@ -397,6 +437,8 @@ class Play extends Component {
                             Next
                          </button>
                       <button id="quit-button" onClick={this.handleButtonClick}>QuitGame</button> */}
+                      {/* <button id="quit-button" onClick={this.handleButtonClick}>QuitGame</button> */}
+                    
                   </div>
                     </div>
 
