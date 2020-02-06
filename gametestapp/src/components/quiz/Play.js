@@ -1,6 +1,8 @@
 import React, { Component, Fragment } from 'react';
 import { Helmet } from 'react-helmet';
+import axios from 'axios';
 import M from 'materialize-css';
+
 
 import questions from '../../questions.json';
 import isEmpty from '../../utils/is-empty';
@@ -337,7 +339,33 @@ class Play extends Component {
          setTimeout(() => {
              this.props.history.push('/play/quizSummary', playerStats);
          }, 1000);
-     }
+     };
+
+     submit = (event) => {
+        event.preventDefault();
+
+        const payload = {
+            score:this.state.score,
+            numberOfQuestions:this.state.wrongAnswers + this.state.correctAnswers,
+            correctAnswers: this.state.correctAnswers,
+            wrongAnswers: this.state.wrongAnswers,
+            usedHints:this.state.usedHints,
+            usedFiftyFifty: this.state.usedFiftyFifty
+        };
+
+        axios ({
+            url:'http://localhost:3001/api/play/quizSummary',
+            method:'POST',
+            data:payload
+        })
+
+        .then(()=>{
+            console.log('Data has been sent to the server');
+        })
+        .catch(()=>{
+            console.log('Internal Server Error');
+        });;
+     };
           
     render () {
         const { 
@@ -401,6 +429,8 @@ class Play extends Component {
                             Next
                          </button>
                       <button id="quit-button" onClick={this.handleButtonClick}>QuitGame</button>
+                     
+                    
                   </div>
                 </div>
             </Fragment>

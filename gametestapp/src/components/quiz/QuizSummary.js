@@ -30,8 +30,11 @@ class QuizSummary extends Component {
             usedHints:state.hintsUsed,
             usedFiftyFifty:state.fiftyFiftyUsed,
         });
-    }
-}
+    };
+
+     
+
+};
    render(){
 
     const {state, score} = this.props.location;
@@ -40,14 +43,14 @@ class QuizSummary extends Component {
     console.log(calculatedScore)
     if (calculatedScore <= 30){
         remark = 'You need more practice!';
-    } else if (calculatedScore >30 && score <= 50){
+    } else if (calculatedScore >30 && calculatedScore <= 50){
         remark ="Better luck next time";
-    } else if (calculatedScore <= 70 && score > 50){
-        remark = 'You can do better';
-    } else if (calculatedScore >=71 && score <=84){
-        remark = 'You did Great'
+    } else if (calculatedScore <= 70 && calculatedScore > 50){
+        remark = 'You can do better Go See A TA!!!';
+    } else if (calculatedScore >=71 && calculatedScore <=84){
+        remark = 'You getting Close!! Go See Stanley or Lori'
     } else {
-        remark = 'Your an Software Engineer'
+        remark = 'You Are A Software Engineer'
     }
     if (state !==undefined){
         stats = (
@@ -62,8 +65,7 @@ class QuizSummary extends Component {
                 <span className="stat left">Total Number of Questions:</span>
                 <span className="right">{this.state.wrongAnswers + this.state.correctAnswers}</span><br></br>
                        
-                <span className="stat left">Number of Attempted Questions:</span>
-                <span className="right">{this.state.numberOfAnsweredQuestions}</span><br></br>
+   
 
                 <span className="stat left">Number of Correct Answers:</span>
                 <span className="right">{this.state.correctAnswers}</span><br></br>

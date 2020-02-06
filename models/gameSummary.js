@@ -1,13 +1,12 @@
 const mongoose = require('mongoose');
 
-const Schema = mongoose.Schema;
-
 // Create Schema and Model
 
+const Schema = mongoose.Schema;
 const gameSummarySchema = new Schema({
+      
       score: {type: Number, required: true, default: 0},
       numberOfQuestions: Number,
-      numberOfAnsweredQuestions: Number,
       correctAnswers: Number,
       wrongAnswers: Number,
       correctAnswers: Number,
