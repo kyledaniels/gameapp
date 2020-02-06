@@ -83,8 +83,8 @@ class QuizSummary extends Component {
                         Would we rather the User to do research and find the answers themselves?
                     </p>
                 </div>
-                        <button id="home"><a href="/"></a>Home</button>
-                        <button id="again"><a href="/play/quiz"></a>Play Again</button>
+                        <button className="summary-btn"><a href="/"></a>Home</button>
+                        <button className="summary-btn"><a href="/play/quiz"></a>Play Again</button>
             </div>
             </Fragment>
         )
