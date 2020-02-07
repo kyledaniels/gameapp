@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { Helmet } from 'react-helmet';
 import axios from 'axios';
 import M from 'materialize-css';
+import "./playstyle.css"
 
 
 import questions from '../../questions.json';
@@ -384,7 +385,7 @@ class Play extends Component {
                     <audio  ref={this.wrongSound}src={wrongNotification}></audio>
                     <audio ref={this.buttonSound} src={buttonSound}></audio>
                 </Fragment>
-                <div className="questions">
+                <div className="questions quiz-continer">
                     <div className="lifeline-container">
                         <p>
                     <span onClick={this.handleFiftyFifty}className=" mdi-set-center mdi-24px lifeline-icon">Life-Line</span>
