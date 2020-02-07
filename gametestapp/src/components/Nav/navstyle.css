@@ -1,0 +1,29 @@
+.main-nav {
+    margin-left: 600px;
+    list-style: none;
+}
+
+.main-nav li {
+    display: inline-block;
+}
+.main-nav li a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 50px;
+    font-size: 15px
+}
+.main-nav li a:hover {
+    border: 1px solid white;
+}
+@media screen and (max-width: 600px) {
+    .main-nav {
+        float: none;
+        width: 100%;
+    }
+}
+@media screen and (max-width: 300px) {
+    .main-nav {
+        float: left;
+        width: 100%;
+    }
+}

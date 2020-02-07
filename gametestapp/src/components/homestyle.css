@@ -1,0 +1,83 @@
+.github-container {
+    background-color: blueviolet;
+    width: 50vw;
+    height: 85vh;
+    margin: 60px 445px;
+    border-radius: 8px;
+}
+.game-intro {
+    margin-left: 160px;
+}
+.github-container {
+    padding-left: 10px;
+}
+.signin-text {
+    font-size: 18px;
+}
+.signin-input {
+    margin-bottom: 10px;
+    border-radius: 2px;
+    padding-left: 5px 10px;
+}
+.password-input {
+    border-radius: 2px;
+    padding-left: 5px 10px;
+}
+.signin-btn {
+    border-radius: 6px;
+    margin: 15px 0 10px 0px;
+    padding: 3px 58px;
+}
+.email-input {
+    margin-bottom: 10px;
+    border-radius: 2px;
+    padding-left: 5px 10px;
+}
+.username-input {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    border-radius: 2px;
+    padding-left: 5px 10px;
+}
+.register-password {
+    margin-bottom: 10px;
+    border-radius: 2px;
+    padding-left: 5px 10px;
+}
+.register-btn {
+    padding: 3px 15px;
+    border-radius: 6px;
+    color: rgb(97, 97, 97);
+    margin-top: 50px;
+}
+.start-btn {
+    padding: 3px 15px;
+    border-radius: 6px;
+    color: rgb(97, 97, 97);
+    margin-top: 50px;
+}
+#c-img2 {
+    margin-left: 10px;
+}
+#c-img3 {
+    margin-left: 10px;
+}
+#c-img4 {
+    margin-left: 10px;
+}
+#black-girl {
+    height: 30vh;
+}
+#black-girl:hover {
+    border-radius: 2px;
+    color: rgb(0, 0, 0);
+}
+#white-girl {
+    height: 28vh;
+}
+#asian-boy {
+    height: 28vh;
+}
+#white-boy {
+    height: 28vh;
+}

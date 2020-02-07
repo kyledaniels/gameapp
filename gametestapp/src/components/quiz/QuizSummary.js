@@ -1,6 +1,7 @@
 import React, {Component, Fragment} from 'react';
 import {Helmet} from 'react-helmet';
 import {Link} from 'react-router-dom';
+import "./summary.css"
 
 class QuizSummary extends Component {
     constructor (props){
@@ -56,10 +57,10 @@ class QuizSummary extends Component {
         stats = (
             <Fragment>
             <div>
-                <span className = "mdi mdi-check-circle-outline success-icon"></span>
             </div>
-            <h1>Game has ended</h1>
-            <div className="container">
+            <div className="container" id="summary">
+            {/* <span className = "mdi mdi-check-circle-outline success-icon"></span> */}
+                <h1>Game has ended</h1>
                 <h4>{remark}</h4>
                 <h2>Your Score: {this.state.score.toFixed(0)}&#37;</h2>
                 <span className="stat left">Total Number of Questions:</span>
@@ -78,8 +79,13 @@ class QuizSummary extends Component {
 
                 <span className="stat left">50/50 Used:</span>
                 <span className="right">{this.state.usedFiftyFifty}</span>
+                <div id="summary-nav">
+                    <Link to ="/">Home</Link>
+                    <button className="summary-btn" type="submit"><a href="/play/quiz"></a>Play Again</button>
+                </div>
             </div>
-            <section>
+            
+            {/* <section>
                 <ul>
                     <li>
                         <Link to ="/">Back To Home Page</Link>
@@ -88,7 +94,7 @@ class QuizSummary extends Component {
                         <Link to ="/play/quiz">Play Again</Link>
                     </li>
                  </ul>
-            </section>
+            </section> */}
             </Fragment>
         )
 

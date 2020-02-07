@@ -3,8 +3,6 @@ import { Helmet } from 'react-helmet';
 import axios from 'axios';
 import M from 'materialize-css';
 import "./playstyle.css"
-
-
 import questions from '../../questions.json';
 import isEmpty from '../../utils/is-empty';
 import correctNotification from '../../assets/audio/crash.mp3';
@@ -385,36 +383,39 @@ class Play extends Component {
                     <audio  ref={this.wrongSound}src={wrongNotification}></audio>
                     <audio ref={this.buttonSound} src={buttonSound}></audio>
                 </Fragment>
-                <div className="questions quiz-continer">
+                <div className="questions quiz-container">
                     <div className="lifeline-container">
                         <p>
-                    <span onClick={this.handleFiftyFifty}className=" mdi-set-center mdi-24px lifeline-icon">Life-Line</span>
+                    <span onClick={this.handleFiftyFifty}className=" mdi-set-center mdi-24px lifeline-icon"><i class="material-icons" id="light-bulb">lightbulb_outline</i></span>
                         <span className="lifeline">{fiftyFifty}</span>
                         </p>
                         <p>
                     <span onClick={this.handleHints} className=" mdi mdi-lightbulb-on-outline mdi-24px lifeline-icon"></span> 
-                            <span className='lifeline' >{hints}</span>
+                            <span className='lifeline'>{hints}</span>
                         </p>
                     </div>
                 
                     <div className="timer-container">
                         <p>
-                            <span>{currentQuestionIndex + 1} of {numberOfQuestions}</span>
-                           <span className="right">{time.minutes}:{time.seconds}<span className="mdi mdi-clock-outline mdi-24px">Clock will go here</span></span>
+                        <span className="right" id="timer">{time.minutes}:{time.seconds}<span className="mdi mdi-clock-outline mdi-24px">
+                            </span></span>
+                            <br></br>
+                            <br></br>
+                            <span id="question-que">{currentQuestionIndex + 1} of {numberOfQuestions}</span>
                         </p>
                     </div>
 
-                    <h5>{currentQuestion.question}</h5>
+                    <h3>{currentQuestion.question}</h3>
                 
-                   <div className="options-container">
-                        <p onClick={this.handleOptionClick} className="option">{currentQuestion.optionA}</p>
-                        <p  onClick={this.handleOptionClick}className="option">{currentQuestion.optionB}</p>
-                  </div>
+                <div className="options-container">
+                   <button className="option-btn"><p onClick={this.handleOptionClick} className="option">{currentQuestion.optionA}</p></button><br></br>
+                   <button className="option-btn"><p  onClick={this.handleOptionClick}className="option">{currentQuestion.optionB}</p></button>
+                </div>
 
-                  <div className="options-container">
-                        <p onClick={this.handleOptionClick} className="option">{currentQuestion.optionC}</p>
-                        <p onClick={this.handleOptionClick} className="option">{currentQuestion.optionD}</p>
-                  </div>
+                <div className="options-container">
+                    <button className="option-btn"><p onClick={this.handleOptionClick} className="option">{currentQuestion.optionC}</p></button><br></br>
+                    <button className="option-btn"><p onClick={this.handleOptionClick} className="option">{currentQuestion.optionD}</p></button>
+                </div>
 
                   <div className="button-container">
                       <button 
