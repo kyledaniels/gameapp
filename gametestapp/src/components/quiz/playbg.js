@@ -14,7 +14,7 @@ import characterbg from '../images/characterbg.png';
 // import characterswb from "../components/images/characterswb.png";
 
 
-class Play extends Component {
+class Playbg extends Component {
     constructor (props) {
         super(props);
         this.state ={
@@ -410,7 +410,7 @@ class Play extends Component {
                     </div>
 
                     <h3>{currentQuestion.question}</h3>
-                    {/* <div id="character-image"><img src={characterbg} alt="character1" id="black-girl" className="character" /></div> */}
+                    <div id="character-image"><img src={characterbg} alt="character1" id="bg" className="character" /></div>
                 <div className="options-container">
                    <button className="option-btn"><p onClick={this.handleOptionClick} className="option">{currentQuestion.optionA}</p></button><br></br>
                    <button className="option-btn"><p  onClick={this.handleOptionClick}className="option">{currentQuestion.optionB}</p></button>
@@ -447,4 +447,4 @@ class Play extends Component {
 
 
 
-export default Play;
+export default Playbg;

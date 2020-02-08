@@ -93,3 +93,10 @@ button:active {
 #question-que {
     font-size: 18px;
 }
+#character-image {
+    float: right;
+    padding-right: 50px;
+}
+#bg {
+    height: 45vh;
+}

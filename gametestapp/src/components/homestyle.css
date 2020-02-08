@@ -10,6 +10,7 @@
 }
 .github-container {
     padding-left: 10px;
+    padding-right: 10px;
 }
 .signin-text {
     font-size: 18px;
@@ -80,4 +81,16 @@
 }
 #white-boy {
     height: 28vh;
+}
+#light {
+    size: 48px;
+}
+#do-you {
+font-size: 24px;
+}
+h1 {
+    font-size: 36px;
+}
+#github:hover {
+    background-color: cyan;
 }
