@@ -1,30 +1,28 @@
-//Import npm packages
-
+// Import npm packages
 const express = require("express");
-
 const mongoose = require("mongoose");
+const morgan = require('morgan');
 const routes = require("./routes/api");
 const app = express();
-const PORT = process.env.PORT || 3001;
-
-// Define middleware here
-app.use(express.urlencoded({ extended: true }));
+const PORT = process.env.PORT || 8080;
+// Connect to the Mongo DB
+mongoose.connect('mongodb://localhost/quizgame', {
+  usedNewUrlParser:true,
+  useUnifiedTopology: true
+});
+mongoose.connection.on('connected', ()=> {
+  console.log('Mongoose is connected');
+});
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+// HTTP request logger
+app.use(morgan('tiny'));
+app.use('/api',routes);
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
-// Add routes, both API and view
- app.use('/',routes);
-
-// Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/gameSummary");
-
-mongoose.connection.on('connected', ()=> {
-  console.log('Mongoose is connected');
-})
-
 // Start the API server
 app.listen(PORT, function() {
-  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
+  console.log(`:earth_americas:  ==> API Server now listening on PORT ${PORT}!`);
 });

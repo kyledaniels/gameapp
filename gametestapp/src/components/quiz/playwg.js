@@ -8,13 +8,13 @@ import isEmpty from '../../utils/is-empty';
 import correctNotification from '../../assets/audio/crash.mp3';
 import wrongNotification from '../../assets/audio/kick-bass.mp3';
 import buttonSound from '../../assets/audio/snare.mp3';
-import characterbg from '../images/characterbg.png';
-// import characterswg from "../components/images/characterswg.png";
+// import characterbg from '../images/characterbg.png';
+import characterswg from "../components/images/characterswg.png";
 // import charactersab from "../components/images/charactersab.png";
 // import characterswb from "../components/images/characterswb.png";
 
 
-class Play extends Component {
+class Playwg extends Component {
     constructor (props) {
         super(props);
         this.state ={
@@ -410,7 +410,7 @@ class Play extends Component {
                     </div>
 
                     <h3>{currentQuestion.question}</h3>
-                    {/* <div id="character-image"><img src={characterbg} alt="character1" id="black-girl" className="character" /></div> */}
+                    <img src={characterswg} alt="character2" id="white-girl" className="character" />
                 <div className="options-container">
                    <button className="option-btn"><p onClick={this.handleOptionClick} className="option">{currentQuestion.optionA}</p></button><br></br>
                    <button className="option-btn"><p  onClick={this.handleOptionClick}className="option">{currentQuestion.optionB}</p></button>
@@ -447,4 +447,4 @@ class Play extends Component {
 
 
 
-export default Play;
+export default Playwb;

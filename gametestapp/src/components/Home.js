@@ -20,83 +20,31 @@ const Home = () =>  (
         <section>
         <div>
            <span className="mdi mdi-cube-outline mdi-48px"></span>
-    </div>
-    <h1 className="header">Sign in or Sign Up with Github Account to play.</h1>
-    <p>Sign into your github page to play the game to start the game or sign up <br></br>and pick your character to start the game...GOOD LUCK!</p>
-    <div className ="play-button-container inner-container">
-    {/* <p className="signin-text">Sign In</p> */}
-            <div className="input-group">
-              <label htmlFor="username" className="githubemail">Github Email</label><br></br>
-              <input
-                type="text"
-                name="username"
-                className="signin-input"
-                placeholder="Username"/>
-            </div>
-            <div className="input-group">
-              <label htmlFor="password" className="githubpassword">Password</label><br></br>
-              <input
-                type="password"
-                name="password"
-                className="password-input"
-                placeholder="Password"/>
-                <br></br>
-                <button a href="https://github.com/login/oauth/authorize?client_id=f2effb81e7b98417a023" 
-                className="signin-btn" type="submit">Sign In</button>
-            </div>
-    </div>
+        </div>
+    <h1 className="header">Welcome To Be A Software Engineer Game!</h1>
+    <h3 className="read">Read instructions below before starting the game</h3>
+    <p>You will be given a test of 15 questions of common web developer asked by a future employer in a job interview.
+      <br></br>You will be timed 3 minutes during this test, you will also be assisted with a lifeline icon <i class="material-icons" id="light">lightbulb_outline</i><br></br>
+      You will be given 2 hints for the entire test so make sure you use your brain power.
+    </p>
+    <h4 id="do-you">Do you have what it take to be a software engineer?</h4>
+    <p className="instructions">Click on the "Sign in With Github" to sign in, then pick your character to start the game...GOOD LUCK!</p>
               <div className="outter-container">
-          {/* <div className="header">
-          <p className="register-text">Register account associated with Github</p>
-          </div> */}
           <div className="Registration-box">
-            <div className="input-group">
-            <p htmlFor="github-email">Enter email associated with your Github</p>
-            <label htmlFor="Email">Github Email</label><br></br>
-            <input
-                type="text"
-                name="Email"
-                className="email-input"
-                placeholder="Github Email"/>
-            </div>
-            {/* <div className="input-group">
-              <p className="register-username">Enter your character's name</p>
-              <label htmlFor="register-username">Username</label>
-              <input
-                type="text"
-                name="Character's Name"
-                className="username-input"
-                placeholder="Character's name"/>
-            </div> */}
-            <div className="input-group">
-              {/* <p className="create-password">Github Password</p> */}
-              <label htmlFor="Git-password">Github Password</label><br></br>
-              <input
-                type="password"
-                name="register-password"
-                className="register-password"
-                placeholder="Github password"/>
-                <br></br>
-                {/* <button className="register-btn" id="c-img1" type="submit">Register</button>
-                <button className="register-btn" id="c-img2" type="submit">Register</button>
-                <button className="register-btn" id="c-img3" type="submit">Register</button>
-                <button className="register-btn" id="c-img4" type="submit">Register</button> */}
-            </div>
+          <button className="signin-btn" type="submit" id="github">
+                <a href = {url}>Sign in With Github</a>
+              </button>
+          </div>
+          <div className="inner-container">
+            {/* <p id="character-instructions">After clicking on the Sign in with github button, click on the character to start the game.</p> */}
           </div>
           </div>
         <div id="start-game">
-        <button className="sugnin-btn" type="submit" id="github">
-                <a href = {url}>Sign in With Github</a>
-                </button><a href="/play/quiz"><img src={characterbg} alt="character1" id="black-girl" className="character" /></a>
+          <a href="/play/quizbg"><img src={characterbg} alt="character1" id="black-girl" className="character" /></a>
           <a href="/play/quiz"><img src={charactersab} alt="character3" id="asian-boy" className="character" /></a>
-          <a href="/play/quiz"><img src={characterswg} alt="character2" id="white-girl" className="character" /></a>
+          <a href="/play/quizwb"><img src={characterswg} alt="character2" id="white-girl" className="character" /></a>
           <a href="/play/quiz"><img src={characterswb} alt="character4" id="white-boy" className="character" /></a>
         </div>
-        
-    {/* <div className="auth-container">
-        <Link to="/login">Login</Link>
-        <Link to="/register">Register</Link>
-    </div> */}
     </section>
     </div>
     </Fragment>

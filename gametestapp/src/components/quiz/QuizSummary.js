@@ -1,8 +1,8 @@
 import React, {Component, Fragment} from 'react';
 import {Helmet} from 'react-helmet';
 import {Link} from 'react-router-dom';
-import "./summary.css"
-
+import Axios from 'axios';
+import "./summary.css";
 class QuizSummary extends Component {
     constructor (props){
     super(props);
@@ -15,13 +15,11 @@ class QuizSummary extends Component {
         hintsUsed:0,
         fiftyFiftyUsed:0
     };
-
     }
-
     componentDidMount (){
         const {state} = this.props.location;
         if(state){
-        console.log("Setting the values", state.numberOfQuestions)
+        // console.log("Setting the values", state.numberOfQuestions)
         this.setState({
             numberOfQuestions:state.numberOfQuestions,
             correctAnswers:state.correctAnswers,
@@ -31,17 +29,27 @@ class QuizSummary extends Component {
             usedHints:state.hintsUsed,
             usedFiftyFifty:state.fiftyFiftyUsed,
         });
+        const playerStats = {
+             score: state.score,
+             numberOfQuestions: state.numberOfQuestions,
+             numberOfAnsweredQuestions: (state.correctAnswers + state.wrongAnswers) - state.numberOfQuestions,
+             correctAnswers: state.correctAnswers,
+             wrongAnswers: state.wrongAnswers,
+             fiftyFiftyUsed: 2 - state.fiftyFifty,
+             hintsUsed: 5- state.hints
+         };
+        // Axios.post('/api', playerStats)
+        // console.log(playerStats)
+        //  .then(res => console.log(res.data),console.error(),
+        //  console.log(playerStats + 'can be found posted here')
+        //  )
     };
-
-     
-
 };
    render(){
-
-    const {state, score} = this.props.location;
+    const {state} = this.props.location;
     let stats, remark;
     let calculatedScore = (state.correctAnswers/state.numberOfQuestions) * 100
-    console.log(calculatedScore)
+    // console.log(calculatedScore)
     if (calculatedScore <= 30){
         remark = 'You need more practice!';
     } else if (calculatedScore >30 && calculatedScore <= 50){
@@ -57,35 +65,24 @@ class QuizSummary extends Component {
         stats = (
             <Fragment>
             <div>
+                <span className = "mdi mdi-check-circle-outline success-icon"></span>
             </div>
             <div className="container" id="summary">
-            {/* <span className = "mdi mdi-check-circle-outline success-icon"></span> */}
-                <h1>Game has ended</h1>
+            <h1>Game has ended</h1>
                 <h4>{remark}</h4>
                 <h2>Your Score: {this.state.score.toFixed(0)}&#37;</h2>
                 <span className="stat left">Total Number of Questions:</span>
                 <span className="right">{this.state.wrongAnswers + this.state.correctAnswers}</span><br></br>
-                       
-   
-
                 <span className="stat left">Number of Correct Answers:</span>
                 <span className="right">{this.state.correctAnswers}</span><br></br>
-
                 <span className="stat left">Number of Wrong Answers:</span>
                 <span className="right">{this.state.wrongAnswers}</span><br></br>
-
                 <span className="stat left">Hints Used:</span>
                 <span className="right">{this.state.usedHints}</span><br></br>
-
                 <span className="stat left">50/50 Used:</span>
                 <span className="right">{this.state.usedFiftyFifty}</span>
-                <div id="summary-nav">
-                    <Link to ="/">Home</Link>
-                    <button className="summary-btn" type="submit"><a href="/play/quiz"></a>Play Again</button>
-                </div>
             </div>
-            
-            {/* <section>
+            <section>
                 <ul>
                     <li>
                         <Link to ="/">Back To Home Page</Link>
@@ -94,29 +91,24 @@ class QuizSummary extends Component {
                         <Link to ="/play/quiz">Play Again</Link>
                     </li>
                  </ul>
-            </section> */}
+            </section>
             </Fragment>
         )
-
     } else{
-        stats = ( 
+        stats = (
         <section>
         <h1 className="no-stats">No Stats Available</h1>
-       
         <ul>
         <li>
             <Link to ="/">Back To Home Page</Link>
         </li>
         <li>
-            <Link to ="/play/quiz">Play Again</Link>
+            <Link to ="/play/quiz" >Play Again</Link>
         </li>
      </ul>
      </section>
-    
-    
-        );  
+        );
     }
-     
        return(
            <Fragment>
                <Helmet><title>Game Summary</title></Helmet>
@@ -124,8 +116,10 @@ class QuizSummary extends Component {
            </Fragment>
        );
    }
-
 }
-
-
 export default QuizSummary;
+
+
+
+
+

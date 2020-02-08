@@ -9,7 +9,6 @@ const gameSummarySchema = new Schema({
       numberOfQuestions: Number,
       correctAnswers: Number,
       wrongAnswers: Number,
-      correctAnswers: Number,
       usedHints: Number,
       usedFiftyFifty: Number,
 });
