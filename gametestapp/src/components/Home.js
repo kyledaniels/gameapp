@@ -6,6 +6,8 @@ import characterswg from "../components/images/characterswg.png";
 import charactersab from "../components/images/charactersab.png";
 import characterswb from "../components/images/characterswb.png";
 import "./homestyle.css";
+const keys = require('./config').clientID;
+const url = 'https://github.com/login/oauth/authorize?client_id=' + keys;
 
 
 
@@ -83,7 +85,9 @@ const Home = () =>  (
           </div>
           </div>
         <div id="start-game">
-          <a href="/play/quiz"><img src={characterbg} alt="character1" id="black-girl" className="character" /></a>
+        <button className="sugnin-btn" type="submit" id="github">
+                <a href = {url}>Sign in With Github</a>
+                </button><a href="/play/quiz"><img src={characterbg} alt="character1" id="black-girl" className="character" /></a>
           <a href="/play/quiz"><img src={charactersab} alt="character3" id="asian-boy" className="character" /></a>
           <a href="/play/quiz"><img src={characterswg} alt="character2" id="white-girl" className="character" /></a>
           <a href="/play/quiz"><img src={characterswb} alt="character4" id="white-boy" className="character" /></a>
