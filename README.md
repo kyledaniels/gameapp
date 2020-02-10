@@ -1,7 +1,6 @@
 #  Who Wants To Be A Software Engineer?
 
-
-![image](https://user-images.githubusercontent.com/40472408/74196403-21a53000-4c2b-11ea-85d9-3a9612aa488b.png)
+![image](https://user-images.githubusercontent.com/40472408/74198654-fa9d2d00-4c2f-11ea-9bfc-f48b74524ce7.png)
 
 
 
