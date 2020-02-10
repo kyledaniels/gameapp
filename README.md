@@ -33,20 +33,20 @@
     
     
 - [Packages](#Packages)
-    - [Node.js](#typo3-extension-repository)
+    - [Mongoose](#typo3-extension-repository)
       - Node.js is an open-source, cross-platform, JavaScript runtime environment that executes JavaScript code outside of a      browser.
-    - [Sequelize](#typo3-extension-repository)
+    - [Axios](#typo3-extension-repository)
       - Sequelize is a promise-based ORM for Node.js. It has dozens of cool features like synchronization, association, and validation. It also has support for PostgreSQL, MySQL, MariaDB, SQLite, and MSSQL.
      
-    - [Bcrypt](#typo3-extension-repository)
+    - [React Helmet](#typo3-extension-repository)
       - Bcrypt is a password hashing function. Besides incorporating a salt to protect against rainbow table attacks, bcrypt is an adaptive function: over time, the iteration count can be increased to make it slower, so it remains resistant to brute-force search attacks even with increasing computation power.
-    - [Passport](#typo3-extension-repository)
+    - [Jest](#typo3-extension-repository)
       - Passport is authentication middleware for Node. js. Extremely flexible and modular, Passport can be unobtrusively dropped in to any Express-based web application. A comprehensive set of strategies support authentication using a username and password, Facebook, Twitter, and more.
     
     ![image](https://user-images.githubusercontent.com/40472408/70691211-86bdc300-1c86-11ea-8254-867dfea07491.png)
     
  - [Database](#Packages)
-    - [MySQL workbench](#typo3-extension-repository)
+    - [Mongodb](#typo3-extension-repository)
       - MySQL Workbench is a visual database design tool that integrates SQL development, administration, database design, creation and maintenance into a single integrated development environment for the MySQL database system.
       
       ![image](https://user-images.githubusercontent.com/40472408/70741186-bd2c2a00-1ce8-11ea-8ea3-c2aece44f7a2.png)
