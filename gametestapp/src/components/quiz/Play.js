@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { Helmet } from 'react-helmet';
-import axios from 'axios';
+
 import M from 'materialize-css';
 
 
@@ -9,6 +9,7 @@ import isEmpty from '../../utils/is-empty';
 import correctNotification from '../../assets/audio/crash.mp3';
 import wrongNotification from '../../assets/audio/kick-bass.mp3';
 import buttonSound from '../../assets/audio/snare.mp3';
+
 
 
 class Play extends Component {
@@ -335,37 +336,20 @@ class Play extends Component {
              fiftyFiftyUsed: 2 - state.fiftyFifty, 
              hintsUsed: 5- state.hints
          };
-         console.log(playerStats);
+         console.log(playerStats + 'line 339');
+        //  Axios.post('/api', playerStats)
+        //  .then(res => console.log(res.data),console.error(),
+        //  console.log(playerStats + 'can be found posted here')
+         
+        //  )
+         
+
          setTimeout(() => {
              this.props.history.push('/play/quizSummary', playerStats);
          }, 1000);
      };
 
-     submit = (event) => {
-        event.preventDefault();
-
-        const payload = {
-            score:this.state.score,
-            numberOfQuestions:this.state.wrongAnswers + this.state.correctAnswers,
-            correctAnswers: this.state.correctAnswers,
-            wrongAnswers: this.state.wrongAnswers,
-            usedHints:this.state.usedHints,
-            usedFiftyFifty: this.state.usedFiftyFifty
-        };
-
-        axios ({
-            url:'http://localhost:3001/api/play/quizSummary',
-            method:'POST',
-            data:payload
-        })
-
-        .then(()=>{
-            console.log('Data has been sent to the server');
-        })
-        .catch(()=>{
-            console.log('Internal Server Error');
-        });;
-     };
+     
           
     render () {
         const { 

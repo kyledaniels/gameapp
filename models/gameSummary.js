@@ -1,19 +1,24 @@
-const mongoose = require('mongoose');
+//
+ const mongoose = require('mongoose');
 
-// Create Schema and Model
 
+
+//Schema
 const Schema = mongoose.Schema;
-const gameSummarySchema = new Schema({
-      
-      score: {type: Number, required: true, default: 0},
+const gamesummariesSchema = new Schema({
+
+      score: Number,
       numberOfQuestions: Number,
       correctAnswers: Number,
       wrongAnswers: Number,
-      correctAnswers: Number,
       usedHints: Number,
-      usedFiftyFifty: Number,
-});
+      usedFiftyFifty: Number
+     
+      });
 
-const gameSummary = mongoose.model('gamesummary',gameSummarySchema);
+ //Model
+const gamesummaries = mongoose.model('gamesummaries',gamesummariesSchema);
 
-module.exports = gameSummary;
+
+
+module.exports = gamesummaries;

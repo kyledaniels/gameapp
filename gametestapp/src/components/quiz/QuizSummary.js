@@ -1,6 +1,7 @@
 import React, {Component, Fragment} from 'react';
 import {Helmet} from 'react-helmet';
 import {Link} from 'react-router-dom';
+import Axios from 'axios';
 
 class QuizSummary extends Component {
     constructor (props){
@@ -17,10 +18,12 @@ class QuizSummary extends Component {
 
     }
 
+
     componentDidMount (){
+        
         const {state} = this.props.location;
         if(state){
-        console.log("Setting the values", state.numberOfQuestions)
+        // console.log("Setting the values", state.numberOfQuestions)
         this.setState({
             numberOfQuestions:state.numberOfQuestions,
             correctAnswers:state.correctAnswers,
@@ -30,17 +33,46 @@ class QuizSummary extends Component {
             usedHints:state.hintsUsed,
             usedFiftyFifty:state.fiftyFiftyUsed,
         });
-    };
+        const playerStats = {
+             score: state.score,
+             numberOfQuestions: state.numberOfQuestions,
+             correctAnswers: state.correctAnswers,
+             wrongAnswers: state.wrongAnswers,
+             fiftyFiftyUsed: 2 - state.fiftyFifty, 
+             hintsUsed: 5- state.hints
+         };
 
-     
+         const payload = {
+             score:this.state.score,
+             numberOfQuestions:this.state.numberOfQuestions,
+             correctAnswers:this.state.correctAnswers,
+             wrongAnswers:this.state.wrongAnswers,
+             fiftyFifty:this.state.fiftyFiftyUsed,
+             hintsUsed:this.state.hintsUsed
+         }
+
+        Axios({
+            url:'/api/save',
+            method: 'POST',
+            data:playerStats
+        })
+        .then (()=>{
+            console.log('Data has been sent to the server');
+        })
+        .catch (()=>{
+            console.log('Internal Server Error');
+        })
+    }; 
 
 };
+
+
    render(){
 
-    const {state, score} = this.props.location;
+    const {state} = this.props.location;
     let stats, remark;
     let calculatedScore = (state.correctAnswers/state.numberOfQuestions) * 100
-    console.log(calculatedScore)
+    // console.log(calculatedScore)
     if (calculatedScore <= 30){
         remark = 'You need more practice!';
     } else if (calculatedScore >30 && calculatedScore <= 50){
@@ -61,12 +93,11 @@ class QuizSummary extends Component {
             <h1>Game has ended</h1>
             <div className="container">
                 <h4>{remark}</h4>
+            
                 <h2>Your Score: {this.state.score.toFixed(0)}&#37;</h2>
                 <span className="stat left">Total Number of Questions:</span>
                 <span className="right">{this.state.wrongAnswers + this.state.correctAnswers}</span><br></br>
                        
-   
-
                 <span className="stat left">Number of Correct Answers:</span>
                 <span className="right">{this.state.correctAnswers}</span><br></br>
 
@@ -78,6 +109,7 @@ class QuizSummary extends Component {
 
                 <span className="stat left">50/50 Used:</span>
                 <span className="right">{this.state.usedFiftyFifty}</span>
+              
             </div>
             <section>
                 <ul>
@@ -102,7 +134,7 @@ class QuizSummary extends Component {
             <Link to ="/">Back To Home Page</Link>
         </li>
         <li>
-            <Link to ="/play/quiz">Play Again</Link>
+            <Link to ="/play/quiz" >Play Again</Link>
         </li>
      </ul>
      </section>
