@@ -94,7 +94,7 @@ h1 {
 #github:hover {
     background-color: cyan;
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1050px) {
     .github-container {
         width: 65vw;
         height: 85vh;
