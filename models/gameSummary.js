@@ -1,5 +1,4 @@
-//
- const mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
 
 
@@ -11,8 +10,14 @@ const gamesummariesSchema = new Schema({
       numberOfQuestions: Number,
       correctAnswers: Number,
       wrongAnswers: Number,
-      usedHints: Number,
-      usedFiftyFifty: Number
+      usedHints: {
+            type:Number,
+            default:0
+      },
+      usedFiftyFifty:{
+            type:Number,
+            default:0
+      }
      
       });
 
