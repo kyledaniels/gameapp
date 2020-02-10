@@ -2,7 +2,7 @@
     background-color: rgb(211, 43, 226);
     width: 50vw;
     height: 80vh;
-    margin: 60px 445px;
+    margin: 60px 40px;
     border-radius: 8px;
 }
 .option-btn:hover {
@@ -95,8 +95,18 @@ button:active {
 }
 #character-image {
     float: right;
-    padding-right: 50px;
+    padding-right: 30px;
+    margin-top: -40px;
 }
 #bg {
-    height: 45vh;
+    height: 44vh;
+}
+#ab {
+    height: 44vh;
+}
+#wg {
+    height: 42vh;
+}
+#wb {
+    height: 44vh;
 }

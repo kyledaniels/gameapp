@@ -2,7 +2,7 @@
     background-color: rgb(0, 255, 157);
     width: 40vw;
     height: 60vh;
-    margin: 60px 510px;
+    margin: 60px 480px;
     border-radius: 8px;
 }
 .summary-btn {
@@ -13,7 +13,76 @@
     padding: 5px 15px;
     border-radius: 6px;
 }
-#summary-nav {
+#inner {
+    padding-left: 10px;
+    padding-top: 15px;
+}
+.character-summary {
+    padding-right: 50px;
+    margin-top: -100px;
+    float: right;
+}
+#bgirl {
+    height: 45vh;
+
+}
+#aboy {
+    height: 45vh;
+}
+#wgirl {
+    height: 45vh;
+}
+#wboy {
+    height: 45vh;
+}
+.buttons {
     margin-top: 50px;
+    padding-left: 10px;
+}
+.summary-nav {
+    background-color: rgb(26, 175, 224);
+    border-radius: 4px;
+    padding: 2px 15px;
+    margin-right: 45px;
+    color: rgb(255, 255, 255);
+}
+.summary-nav:hover {
+    background-color: rgb(10, 88, 204);
+}
+@media screen and (max-width: 1200px) {
+    #summary {
+        width: 50vw;
+        height: 70vh;
+        margin: 60px 280px;
+    }
+    .character-summary{
+        margin-top: -50px;
+    }
+    .summary-nav {
+        margin-right: 20px;
+    }
 }
 
+@media screen and (max-width: 900px) {
+    #summary {
+        width: 80vw;
+        height: 70vh;
+        margin: 60px 100px;
+    }
+    .character-summary{
+        margin-top: -20px;
+    }
+}
+@media screen and (max-width: 500px) {
+    #summary {
+        width: 75vw;
+        height: 85vh;
+        margin: 60px 120px;
+    }
+    .character-summary{
+        margin-top: -30px;
+    }
+    #wboy {
+        height: 30vh;
+    }
+}

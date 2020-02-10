@@ -2,7 +2,7 @@
     background-color: blueviolet;
     width: 50vw;
     height: 85vh;
-    margin: 60px 445px;
+    margin: 60px 430px;
     border-radius: 8px;
 }
 .game-intro {
@@ -93,4 +93,20 @@ h1 {
 }
 #github:hover {
     background-color: cyan;
+}
+@media screen and (max-width: 1200px) {
+    .github-container {
+        width: 65vw;
+        height: 85vh;
+        margin: 60px 180px;
+    }
+    h1 {
+        font-size: 24px;
+    }
+    #do-you {
+        font-size: 18px;
+    }
+    #start-game {
+        margin-top: -10px;
+    }
 }

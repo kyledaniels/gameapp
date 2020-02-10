@@ -9,7 +9,7 @@ import correctNotification from '../../assets/audio/crash.mp3';
 import wrongNotification from '../../assets/audio/kick-bass.mp3';
 import buttonSound from '../../assets/audio/snare.mp3';
 // import characterbg from '../images/characterbg.png';
-import characterswg from "../components/images/characterswg.png";
+import characterswg from "../images/characterswg.png";
 // import charactersab from "../components/images/charactersab.png";
 // import characterswb from "../components/images/characterswb.png";
 
@@ -340,7 +340,7 @@ class Playwg extends Component {
          };
          console.log(playerStats);
          setTimeout(() => {
-             this.props.history.push('/play/quizSummary', playerStats);
+             this.props.history.push('/play/quizSummarywg', playerStats);
          }, 1000);
      };
 
@@ -410,7 +410,7 @@ class Playwg extends Component {
                     </div>
 
                     <h3>{currentQuestion.question}</h3>
-                    <img src={characterswg} alt="character2" id="white-girl" className="character" />
+                    <div id="character-image"><img src={characterswg} alt="character2" id="wg" className="character" /></div>
                 <div className="options-container">
                    <button className="option-btn"><p onClick={this.handleOptionClick} className="option">{currentQuestion.optionA}</p></button><br></br>
                    <button className="option-btn"><p  onClick={this.handleOptionClick}className="option">{currentQuestion.optionB}</p></button>
@@ -447,4 +447,4 @@ class Playwg extends Component {
 
 
 
-export default Playwb;
+export default Playwg;

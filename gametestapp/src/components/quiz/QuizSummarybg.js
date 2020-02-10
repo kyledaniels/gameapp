@@ -2,8 +2,9 @@ import React, {Component, Fragment} from 'react';
 import {Helmet} from 'react-helmet';
 import {Link} from 'react-router-dom';
 import Axios from 'axios';
+import characterbg from "../images/characterbg.png";
 import "./summary.css";
-class QuizSummary extends Component {
+class QuizSummarybg extends Component {
     constructor (props){
     super(props);
     this.state ={
@@ -68,21 +69,28 @@ class QuizSummary extends Component {
                 <span className = "mdi mdi-check-circle-outline success-icon"></span>
             </div>
             <div className="container" id="summary">
-            <h1>Game has ended</h1>
-                <h4>{remark}</h4>
-                <h2>Your Score: {this.state.score.toFixed(0)}&#37;</h2>
-                <span className="stat left">Total Number of Questions:</span>
-                <span className="right">{this.state.wrongAnswers + this.state.correctAnswers}</span><br></br>
-                <span className="stat left">Number of Correct Answers:</span>
-                <span className="right">{this.state.correctAnswers}</span><br></br>
-                <span className="stat left">Number of Wrong Answers:</span>
-                <span className="right">{this.state.wrongAnswers}</span><br></br>
-                <span className="stat left">Hints Used:</span>
-                <span className="right">{this.state.usedHints}</span><br></br>
-                <span className="stat left">50/50 Used:</span>
-                <span className="right">{this.state.usedFiftyFifty}</span>
+                <div id="inner">
+                    <h1>Game has ended</h1>
+                    <h4>{remark}</h4>
+                    <img src={characterbg} alt="character1" id="bgirl" className="character-summary" />
+                    <h2>Your Score: {this.state.score.toFixed(0)}&#37;</h2>
+                    <span className="stat left">Total Number of Questions:</span>
+                    <span className="right">{this.state.wrongAnswers + this.state.correctAnswers}</span><br></br>
+                    <span className="stat left">Number of Correct Answers:</span>
+                    <span className="right">{this.state.correctAnswers}</span><br></br>
+                    <span className="stat left">Number of Wrong Answers:</span>
+                    <span className="right">{this.state.wrongAnswers}</span><br></br>
+                    <span className="stat left">Hints Used:</span>
+                    <span className="right">{this.state.usedHints}</span><br></br>
+                    <span className="stat left">50/50 Used:</span>
+                    <span className="right">{this.state.usedFiftyFifty}</span>
+                </div>
+                <div className="buttons">
+                <a href="/"><button id="home" className="summary-nav">Home</button></a>
+                <a href="/play/quizbg"><button id="play" className="summary-nav">Try Again</button></a>
+                </div>
             </div>
-            <section>
+            {/* <section>
                 <ul>
                     <li>
                         <Link to ="/">Back To Home Page</Link>
@@ -91,7 +99,7 @@ class QuizSummary extends Component {
                         <Link to ="/play/quiz">Play Again</Link>
                     </li>
                  </ul>
-            </section>
+            </section> */}
             </Fragment>
         )
     } else{
@@ -117,4 +125,9 @@ class QuizSummary extends Component {
        );
    }
 }
-export default QuizSummary;
+export default QuizSummarybg;
+
+
+
+
+
