@@ -33,15 +33,16 @@ class QuizSummary extends Component {
             usedHints:state.hintsUsed,
             usedFiftyFifty:state.fiftyFiftyUsed,
         });
+        let calculatedScore = Math.floor((state.correctAnswers/state.numberOfQuestions) * 100)
         const playerStats = {
-             score: state.score,
+             score: calculatedScore,
              numberOfQuestions: state.numberOfQuestions,
              correctAnswers: state.correctAnswers,
              wrongAnswers: state.wrongAnswers,
              fiftyFiftyUsed: 2 - state.fiftyFifty, 
              hintsUsed: 5- state.hints
          };
-
+         
          const payload = {
              score:this.state.score,
              numberOfQuestions:this.state.numberOfQuestions,
