@@ -49,8 +49,6 @@
   
     
     
-    ![image](https://user-images.githubusercontent.com/40472408/70691211-86bdc300-1c86-11ea-8254-867dfea07491.png)
-    
  - [Database](#Packages)
     - [Mongodb](#typo3-extension-repository)
       - MySQL Workbench is a visual database design tool that integrates SQL development, administration, database design, creation and maintenance into a single integrated development environment for the MySQL database system.
