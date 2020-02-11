@@ -148,8 +148,7 @@ button:active {
 }
 @media screen and (max-width: 425px) {
     .quiz-container {
-        margin: 40px 60px;
         width: 60vw;
-        height: 70vh;
+        height: 90vh;
     }
 }

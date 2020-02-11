@@ -169,14 +169,24 @@ h1 {
         height: 20vh;
     }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 768px) {
     .github-container {
         width: 65vw;
-        height: 120vh;
+        height: 110vh;
         margin: 40px 110px;
     }
     #asian-boy {
         margin-right: 50px;
+        height: 18vh;
+    }
+    #white-boy {
+        height: 18vh;
+    }
+    #black-girl {
+        height: 18vh;
+    }
+    #white-girl {
+        height: 18vh;
     }
 }
 @media screen and (max-width: 450px) {
@@ -236,7 +246,7 @@ h1 {
 @media screen and (max-width: 375px) {
     .github-container {
         width: 75vw;
-        height: 88vh;
+        height: 100vh;
         margin: 10px 35px;
     }
     .read {

@@ -39,11 +39,17 @@ class QuizSummarybg extends Component {
              fiftyFiftyUsed: 2 - state.fiftyFifty,
              hintsUsed: 5- state.hints
          };
-        // Axios.post('/api', playerStats)
-        // console.log(playerStats)
-        //  .then(res => console.log(res.data),console.error(),
-        //  console.log(playerStats + 'can be found posted here')
-        //  )
+        Axios({
+            url:'/api/save',
+            method: 'POST',
+            data:playerStats
+        })
+        .then (()=>{
+            console.log('Data has been sent to the server');
+        })
+        .catch (()=>{
+            console.log('Internal Server Error');
+        })
     };
 };
    render(){
