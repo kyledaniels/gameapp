@@ -24,7 +24,7 @@
     
       - The user will login to the app with thier Github login. GitHub OAuth is a simple oauth API for node.js . This API allows users to authenticate against OAUTH providers, and thus act as OAuth consumers. It also has support for OAuth Echo, which is used for communicating with 3rd party media providers such as TwitPic and yFrog. Also provides rudimentary OAuth2 support, tested against facebook, github, foursquare, google and Janrain. For more 
       
-    - [Profile Page](#typo3-extension-repository)
+    - [Game Summary](#typo3-extension-repository)
       - 
       
     - [Game Summary](#typo3-extension-repository)
