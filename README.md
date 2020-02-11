@@ -25,11 +25,10 @@
       - The user will login to the app with thier Github login. GitHub OAuth is a simple oauth API for node.js . This API allows users to authenticate against OAUTH providers, and thus act as OAuth consumers. It also has support for OAuth Echo, which is used for communicating with 3rd party media providers such as TwitPic and yFrog. Also provides rudimentary OAuth2 support, tested against facebook, github, foursquare, google and Janrain. For more 
       
     - [Profile Page](#typo3-extension-repository)
-      - Users will complete a form with their business information. Dealers will complete an application that will post to the common page. The dealers data will post to the common page on a card that the agents can view. The routes will allow both agents and dealers to view the common page. Agents can contact the dealers that post their information from the application form.   
+      - 
       
-    - [Quotes](#typo3-extension-repository)
-    - An additional functionality will be added to this app that will allow the dealers to generate a quote based on the data that was populated in the application. The quote data will be generated from the data populated in the application. 
-      
+    - [Game Summary](#typo3-extension-repository)
+    - 
     
     
     
