@@ -357,7 +357,7 @@ class Playwb extends Component {
         };
 
         axios ({
-            url:'http://localhost:3001/api/play/quizSummary',
+            url:'/api/play/quizSummary',
             method:'POST',
             data:payload
         })
