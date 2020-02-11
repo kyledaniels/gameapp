@@ -6,8 +6,9 @@ import characterswg from "../components/images/characterswg.png";
 import charactersab from "../components/images/charactersab.png";
 import characterswb from "../components/images/characterswb.png";
 import "./homestyle.css";
-const keys = require('./config').clientID;
-const url = 'https://github.com/login/oauth/authorize?client_id=' + keys;
+// const keys = require('./config').clientID;
+// const url = 'https://github.com/login/oauth/authorize?client_id=' + keys;
+
 
 
 
@@ -32,7 +33,7 @@ const Home = () =>  (
       <div className="outter-container">
           <div className="Registration-box">
               <button className="signin-btn" type="submit" id="github">
-                <a href = {url} className="sign-git">Sign in With Github</a>
+              <a href ='/auth/github/'>Sign in With Github</a>
               </button>
           </div>
         </div>
