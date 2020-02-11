@@ -19,9 +19,9 @@
 ## Table of Contents
 
 - [Functionality](#Functionality)
-    - [Registration/Login](#typo3-extension-repository)
+    - [Authentication using GitHub OAuth 2.0 with NodeJS](#typo3-extension-repository)
     
-      - The user will register and login to the website with a email and password.The Passport package will allow users to log in with username and password, or other third party verifications such as Google. The password hashing middleware which we use to compliment Passport’s functionality is the Bcrypt package. This tool allows us to save the user in the database to later compare with the password used when generating their authentication token. Bcrypt adds 'salt' onto this concept by adding extra random characters onto the password that gets hashed. So the resulting hash is always different for the same input password. This prevents people from building a dictionary of hashes that corespond to the password that made them.
+      - The user will login to the app with thier Github login. GitHub OAuth is a simple oauth API for node.js . This API allows users to authenticate against OAUTH providers, and thus act as OAuth consumers. It also has support for OAuth Echo, which is used for communicating with 3rd party media providers such as TwitPic and yFrog. Also provides rudimentary OAuth2 support, tested against facebook, github, foursquare, google and Janrain. For more 
       
     - [Profile Page](#typo3-extension-repository)
       - Users will complete a form with their business information. Dealers will complete an application that will post to the common page. The dealers data will post to the common page on a card that the agents can view. The routes will allow both agents and dealers to view the common page. Agents can contact the dealers that post their information from the application form.   
