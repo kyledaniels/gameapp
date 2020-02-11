@@ -26,7 +26,7 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js && cd gametestapp && npm i && npm run build",
+    "start": "node server.js && cd gametestapp && npm run build",
     "client": "cd client && npm start",
     "dev": "concurrently\"nodemon server.js\" \"npm run client\""
   },
