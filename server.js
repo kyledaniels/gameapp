@@ -72,7 +72,7 @@ app.listen(PORT, function() {
   console.log(`:earth_americas:  ==> API Server now listening on PORT ${PORT}!`);
 });
 
-app.get("*", (req, res) => {
+app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname + "../build/index.html"));
   });
 
