@@ -7,9 +7,9 @@
 ## :computer: Developers
 
 * :woman_mechanic: Chelsea Jackson- Front End
-* :woman_office_worker: Devon Martens- Front End
+* :woman_office_worker: Devon Martens- Front End/Back End
 *  :man_teacher:Kyle Daniels- Front End/Back End
-*  :man_teacher:Kyle Daniels- Front End/Back End
+*  :man_teacher:Andro Khangulyan- Testing/Research
 
 ⭐️ Star us on GitHub — it helps!
 
