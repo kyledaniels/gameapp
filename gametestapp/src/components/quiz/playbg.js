@@ -340,7 +340,7 @@ class Playbg extends Component {
          };
          console.log(playerStats);
          setTimeout(() => {
-             this.props.history.push('/play/quizSummary', playerStats);
+             this.props.history.push('/play/quizSummarybg', playerStats);
          }, 1000);
      };
 

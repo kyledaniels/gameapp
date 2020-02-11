@@ -1,5 +1,5 @@
 .main-nav {
-    margin-left: 600px;
+    margin-left: 660px;
     list-style: none;
 }
 
@@ -10,20 +10,27 @@
     color: white;
     text-decoration: none;
     padding: 5px 50px;
-    font-size: 15px
+    font-size: 18px
 }
 .main-nav li a:hover {
     border: 1px solid white;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1200px) {
     .main-nav {
-        float: none;
+        margin-left: 430px;
         width: 100%;
     }
 }
-@media screen and (max-width: 300px) {
+
+@media screen and (max-width: 900px) {
     .main-nav {
-        float: left;
+        margin-left: 300px;
+        width: 100%;
+    }
+}
+@media screen and (max-width: 500px) {
+    .main-nav {
+        margin-left: 150px;
         width: 100%;
     }
 }

@@ -2,7 +2,7 @@
     background-color: blueviolet;
     width: 50vw;
     height: 85vh;
-    margin: 60px 445px;
+    margin: 20px 400px;
     border-radius: 8px;
 }
 .game-intro {
@@ -68,19 +68,48 @@
 }
 #black-girl {
     height: 30vh;
+    margin-right: 20px;
 }
 #black-girl:hover {
-    border-radius: 2px;
-    color: rgb(0, 0, 0);
+    background-color: rgb(73, 2, 121);
+    border-radius: 80px;
+}
+#black-girl:active {
+    background-color:  rgb(179, 55, 158);
 }
 #white-girl {
-    height: 28vh;
+    height: 29vh;
+    margin-right: 15px;
+}
+#white-girl:hover {
+    background-color: rgb(73, 2, 121);
+    border-radius: 80px;
+}
+#white-girl:active {
+    background-color: rgb(233, 139, 236);
 }
 #asian-boy {
-    height: 28vh;
+    height: 29vh;
+    margin-right: 20px;
+}
+#asian-boy:hover {
+    background-color: rgb(73, 2, 121);
+    border-radius: 80px;
+}
+#asian-boy:active {
+    background-color: rgb(155, 6, 98);
+
 }
 #white-boy {
-    height: 28vh;
+    height: 29vh;
+}
+#white-boy:hover {
+    background-color: rgb(73, 2, 121);
+    border-radius: 80px;
+}
+#white-boy:active {
+    background-color: rgb(138, 3, 55);
+
 }
 #light {
     size: 48px;
@@ -93,4 +122,158 @@ h1 {
 }
 #github:hover {
     background-color: cyan;
+}
+@media screen and (max-width: 1024px) {
+    .github-container {
+        width: 65vw;
+        height: 86vh;
+        margin: 20px 160px;
+    }
+    .header {
+        font-size: 36px;
+    }
+    .read{
+        margin-top: -25px;
+        font-size: 26px;
+    }
+    .instructions {
+        margin-top: -20px;
+        font-size: 22px;
+    }
+    #do-you {
+        font-size: 26px;
+        margin-top: -18px;
+    }
+    .Registration-box {
+        margin-top: -15px;
+    }
+    #github {
+        padding: 5px 60px;
+    }
+    .sign-git {
+        font-size: 14px;
+    }
+    #start-game {
+        margin-top: 10px;
+    }
+    #black-girl {
+        height: 20vh;
+    }
+    #asian-boy {
+        height: 20vh;
+    }
+    #white-girl {
+        height: 20vh;
+    }
+    #white-boy {
+        height: 20vh;
+    }
+}
+@media screen and (max-width: 768px) {
+    .github-container {
+        width: 65vw;
+        height: 110vh;
+        margin: 40px 110px;
+    }
+    #asian-boy {
+        margin-right: 50px;
+        height: 18vh;
+    }
+    #white-boy {
+        height: 18vh;
+    }
+    #black-girl {
+        height: 18vh;
+    }
+    #white-girl {
+        height: 18vh;
+    }
+}
+@media screen and (max-width: 450px) {
+        .github-container {
+        width: 85vw;
+        height: 124vh;
+        margin: 10px 80px;
+    }
+    #start-game {
+        margin-top: -10px;
+        margin-left: 30px;
+    }
+    #black-girl {
+        height: 23vh;
+    }
+    #asian-boy {
+        height: 23vh;
+    }
+    #white-girl {
+        height: 23vh;
+    }
+    #white-boy {
+        height: 24vh;
+    }
+}
+@media screen and (max-width: 414px){
+    .github-container {
+        width: 65vw;
+        height: 88vh;
+        margin-left: 60px;
+    }
+    .read {
+        margin-top: -15px;
+    }
+    .instructions {
+        margin-top: -15px;
+    }
+    #do-you {
+        margin-top: -15px;
+    }
+    .Registration-box {
+        margin-top: -18px;
+    } 
+    #black-girl {
+        height: 12vh;
+    }
+    #asian-boy {
+        height: 12vh;
+    }
+    #white-girl {
+        height: 12vh;
+    }
+    #white-boy {
+        height: 12vh;
+    }
+}
+@media screen and (max-width: 375px) {
+    .github-container {
+        width: 75vw;
+        height: 100vh;
+        margin: 10px 35px;
+    }
+    .read {
+        margin-top: -15px;
+    }
+    .instructions {
+        margin-top: -15px;
+    }
+    #do-you {
+        margin-top: -10px;
+    }
+    .Registration-box {
+        margin-top: -10px;
+    }
+    #start-game {
+        margin-left: 20px;
+    }
+    #black-girl {
+        height: 15vh;
+    }
+    #asian-boy {
+        height: 15vh;
+    }
+    #white-girl {
+        height: 15vh;
+    }
+    #white-boy {
+        height: 15vh;
+    }
 }
