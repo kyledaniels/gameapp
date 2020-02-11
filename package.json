@@ -1,7 +1,7 @@
 {
   "name": "gametestapp",
   "version": "1.0.0",
-  "description": "",
+  "description": "![image](https://user-images.githubusercontent.com/40472408/74198654-fa9d2d00-4c2f-11ea-9bfc-f48b74524ce7.png)",
   "main": "server.js",
   "dependencies": {
     "axios": "^0.19.2",
