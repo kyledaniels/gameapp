@@ -24,13 +24,13 @@
     
       - The user will login to the app with thier Github login. GitHub OAuth is a simple oauth API for node.js . This API allows users to authenticate against OAUTH providers, and thus act as OAuth consumers. It also has support for OAuth Echo, which is used for communicating with 3rd party media providers such as TwitPic and yFrog. Also provides rudimentary OAuth2 support, tested against facebook, github, foursquare, google and Janrain. 
       
-     - [Profile Page](#typo3-extension-repository)
+     - [Play Game](#typo3-extension-repository)
      
-       - The user will login to the app with thier Github login. GitHub OAuth is a simple oauth API for node.js . This API allows users to authenticate against OAUTH providers, and thus act as OAuth consumers. It also has support for OAuth Echo, which is used for communicating with 3rd party media providers such as TwitPic and yFrog. Also provides rudimentary OAuth2 support, tested against facebook, github, foursquare, google and Janrain.
+       - The user will select an Avatar then be directed to the game page to question one. Throughout the game the user will have the option to use a 50/50 hint twice and must answer fifteen questions within three minutes. If the user select the 50/50 option two of the answer choices will be removed give the user a fifty percent chance to seledt the correct answer. 
        
     - [ Game Summary](#typo3-extension-repository)
     
-      - The user will login to the app with thier Github login. GitHub OAuth is a simple oauth API for node.js . This API allows users to authenticate against OAUTH providers, and thus act as OAuth consumers. It also has support for OAuth Echo, which is used for communicating with 3rd party media providers such as TwitPic and yFrog. Also provides rudimentary OAuth2 support, tested against facebook, github, foursquare, google and Janrain.
+      - Once the user completes the game they will be directed to a Game Summary. The Game Summary will consist of the users score, number of correct answers, number of wrong answers, and remark stating wether the are Software Engineer Ready. The game Summary is then pushed to the MongoDB database.
     
   
        
