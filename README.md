@@ -9,6 +9,7 @@
 * :woman_mechanic: Chelsea Jackson- Front End
 * :woman_office_worker: Devon Martens- Front End
 *  :man_teacher:Kyle Daniels- Front End/Back End
+*  :man_teacher:Kyle Daniels- Front End/Back End
 
 ⭐️ Star us on GitHub — it helps!
 
@@ -34,14 +35,17 @@
     
 - [Packages](#Packages)
     - [Mongoose](#typo3-extension-repository)
-      - Node.js is an open-source, cross-platform, JavaScript runtime environment that executes JavaScript code outside of a      browser.
+      - Mongoose provides a straight-forward, schema-based solution to model your application data. It includes built-in type casting, validation, query building, business logic hooks and more, out of the box.
+      
     - [Axios](#typo3-extension-repository)
-      - Sequelize is a promise-based ORM for Node.js. It has dozens of cool features like synchronization, association, and validation. It also has support for PostgreSQL, MySQL, MariaDB, SQLite, and MSSQL.
+      - Axios is a Javascript library used to make HTTP requests from node.js or XMLHttpRequests from the browser that also supports the ES6 Promise API.By using axios we remove the need to pass the results of the HTTP request to the .json() method. Axios simply returns the data object you expect straight away. Additionally, any kind of error with an HTTP request will successfully execute the .catch() block right out of the box. 
      
     - [React Helmet](#typo3-extension-repository)
-      - Bcrypt is a password hashing function. Besides incorporating a salt to protect against rainbow table attacks, bcrypt is an adaptive function: over time, the iteration count can be increased to make it slower, so it remains resistant to brute-force search attacks even with increasing computation power.
+      - React Helmet is a simple component that makes it easy to manage and dynamically set what’s in the document’s head section. This makes server-side rendering and React Helmet a dynamic duo for creating apps that are SEO and social media-friendly.
+      
     - [Jest](#typo3-extension-repository)
-      - Passport is authentication middleware for Node. js. Extremely flexible and modular, Passport can be unobtrusively dropped in to any Express-based web application. A comprehensive set of strategies support authentication using a username and password, Facebook, Twitter, and more.
+       - Jest is a delightful JavaScript Testing Framework with a focus on simplicity. It works with projects using: Babel, TypeScript, Node, React, Angular, Vue and more!    
+    
     
     ![image](https://user-images.githubusercontent.com/40472408/70691211-86bdc300-1c86-11ea-8254-867dfea07491.png)
     
