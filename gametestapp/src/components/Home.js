@@ -6,8 +6,8 @@ import characterswg from "../components/images/characterswg.png";
 import charactersab from "../components/images/charactersab.png";
 import characterswb from "../components/images/characterswb.png";
 import "./homestyle.css";
-const keys = require('./config').clientID;
-const url = 'https://github.com/login/oauth/authorize?client_id=' + keys;
+// const keys = require('./config').clientID;
+// const url = 'https://github.com/login/oauth/authorize?client_id=' + keys;
 
 
 function Home(){
@@ -30,9 +30,9 @@ return(
     <p className="instructions">Click on the "Sign in With Github" to sign in, then pick your character to start the game...GOOD LUCK!</p>
               <div className="outter-container">
           <div className="Registration-box">
-          <button className="signin-btn" type="submit" id="github">
-                <a href = {url}>Sign in With Github</a>
-              </button>
+          {/* <button className="signin-btn" type="submit" id="github"> */}
+                <a href ='/auth/github/'>Sign in With Github</a>
+              {/* </button> */}
           </div>
           <div className="inner-container">
             {/* <p id="character-instructions">After clicking on the Sign in with github button, click on the character to start the game.</p> */}
