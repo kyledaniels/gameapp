@@ -1,3 +1,4 @@
+require('dotenv').config()
 // Import npm packages
 const express = require("express");
 const mongoose = require("mongoose");
@@ -9,7 +10,6 @@ const session = require('express-session');
 const path = require("path");
 const app = express();
 const PORT = process.env.PORT || 8080;
-const MONGO_URI = require('dotenv').config()
 const uri = process.env.MONGO_URI;
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
@@ -72,6 +72,9 @@ app.listen(PORT, function() {
   console.log(`:earth_americas:  ==> API Server now listening on PORT ${PORT}!`);
 });
 
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname + "../build/index.html"));
+  });
 
 
 
