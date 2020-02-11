@@ -12,9 +12,11 @@ const app = express();
 const PORT = process.env.PORT || 8080;
 const uri = process.env.MONGO_URI;
 // Serve up static assets (usually on heroku)
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-}
+// if (process.env.NODE_ENV === "production") {
+//   app.use(express.static("client/build"));
+// }
+app.use(express.static(path.join(__dirname, 'gametestapp/build')));
+
 app.use(session({ secret: 'keyboard cat', resave: false, saveUninitialized: false }));
 app.use(passport.initialize());
 app.use(passport.session());
@@ -72,9 +74,9 @@ app.listen(PORT, function() {
   console.log(`:earth_americas:  ==> API Server now listening on PORT ${PORT}!`);
 });
 
-// app.get("*", (req, res) => {
-//   res.sendFile(path.join(__dirname + "/gametestapp/build/index.html"));
-//   });
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname + "/gametestapp/build/index.html"));
+  });
 
 
 
