@@ -13,7 +13,7 @@
 
 ⭐️ Star us on GitHub — it helps!
 
-[Who Wants To Be A Software Engineer?](https://thenegotiator.herokuapp.com/member). is a trivia game that will allow the user to review basic interview coding questions. The app will allow the user to answer fifteen interview questions within three minutes. Once the user completes the game they are given a game summary with a remark in regards to their readiness to become a Software Engineer based on their score.  
+[Who Wants To Be A Software Engineer?](https://thenegotiator.herokuapp.com/member). is a trivia game that will allow the user to review basic interview coding questions. The user will attempt to answer fifteen interview questions within three minutes about front and back end technologies. Once the user completes the game they are given a game summary with a score and remarks stating their readiness to become a Software Engineer.  
 
 ![image](https://user-images.githubusercontent.com/40472408/74198490-8c586a80-4c2f-11ea-8cd6-3f406667ab05.png)
 
