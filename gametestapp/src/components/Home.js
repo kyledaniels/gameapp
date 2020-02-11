@@ -10,9 +10,8 @@ const keys = require('./config').clientID;
 const url = 'https://github.com/login/oauth/authorize?client_id=' + keys;
 
 
-
-functionHome = () =>  (
-
+function Home(){
+return(
     <Fragment>
         <Helmet><title>Be A Software Engineer!</title></Helmet>
     
@@ -48,7 +47,7 @@ functionHome = () =>  (
     </section>
     </div>
     </Fragment>
-    
-);
+  );   
+};
 
 export default Home;
