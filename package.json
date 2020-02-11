@@ -20,6 +20,9 @@
     "router": "^1.3.4",
     "yarn": "^1.22.0"
   },
+  "engines": {
+    "node": "^13.6.0"
+  },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -37,4 +40,4 @@
     "url": "https://github.com/kyle67/gametestapp/issues"
   },
   "homepage": "https://github.com/kyle67/gametestapp#readme"
-}
+} 
