@@ -110,3 +110,46 @@ button:active {
 #wb {
     height: 44vh;
 }
+@media screen and (max-width: 1024px) {
+    .quiz-container {
+        margin: 60px 270px;
+    }
+    #bg {
+        height: 32vh;
+    }
+    #ab {
+        height: 32vh;
+    }
+    #wg {
+        height: 32vh;
+    }
+    #wb {
+        height: 32vh;
+    }
+    #character-image {
+        margin-top: -20px;
+    }
+    .option-btn {
+        height: 7vh;
+    }
+    .option {
+        font-size: 14px;
+    }
+    .options-container {
+        margin-top: 10px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .quiz-container {
+        margin: 40px 160px;
+        width: 60vw;
+        height: 85vh;
+    }
+}
+@media screen and (max-width: 425px) {
+    .quiz-container {
+        margin: 40px 60px;
+        width: 60vw;
+        height: 70vh;
+    }
+}
