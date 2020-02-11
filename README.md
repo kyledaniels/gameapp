@@ -32,9 +32,6 @@
     
       - Once the user completes the game they will be directed to a Game Summary. The Game Summary will consist of the users score, number of correct answers, number of wrong answers, number of hints used and remarks stating if they are Software Engineer Ready. The game Summary is then pushed to the MongoDB database.
     
-  
-       
-   
     
     
 - [Packages](#Packages)
@@ -51,6 +48,7 @@
        - Jest is a JavaScript Testing Framework with a focus on simplicity. It works with projects using: Babel, TypeScript, Node, React, Angular, and Vue. It is  designed to ensure correctness of any JavaScript codebase, and write tests with an approachable, familiar and feature-rich API that gives you results quickly. Additionally Jest is well-documented, requires little configuration and can be extended to match your requirements.
        
        
+![image](https://user-images.githubusercontent.com/40472408/74276791-60e38780-4ce4-11ea-9031-e4f72a37bc5e.png)
 
   
     
