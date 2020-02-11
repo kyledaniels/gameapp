@@ -30,7 +30,7 @@
        
     - [ Game Summary](#typo3-extension-repository)
     
-      - Once the user completes the game they will be directed to a Game Summary. The Game Summary will consist of the users score, number of correct answers, number of wrong answers, and remark stating wether the are Software Engineer Ready. The game Summary is then pushed to the MongoDB database.
+      - Once the user completes the game they will be directed to a Game Summary. The Game Summary will consist of the users score, number of correct answers, number of wrong answers, number of hints used and remarks stating if they are Software Engineer Ready. The game Summary is then pushed to the MongoDB database.
     
   
        
@@ -49,6 +49,8 @@
       
     - [Jest](#typo3-extension-repository)
        - Jest is a JavaScript Testing Framework with a focus on simplicity. It works with projects using: Babel, TypeScript, Node, React, Angular, and Vue. It is  designed to ensure correctness of any JavaScript codebase, and write tests with an approachable, familiar and feature-rich API that gives you results quickly. Additionally Jest is well-documented, requires little configuration and can be extended to match your requirements.
+       
+       
 
   
     
