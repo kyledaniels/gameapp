@@ -56,10 +56,10 @@ app.get('/auth/github/callback',
   app.get('/current-user', (req, res) => {
     res.send(JSON.stringify({currentUser: req.user}))
   })
-  app.get('/logout', function(req, res){
-    req.logout();
-    res.redirect('/');
-  });
+  // app.get('/logout', function(req, res){
+  //   req.logout();
+  //   res.redirect('/');
+  // });
 
 // Connect to the Mongo DB
 mongoose.connect('mongodb://localhost/quizgame', {
