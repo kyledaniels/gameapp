@@ -44,7 +44,9 @@
       - React Helmet is a simple component that makes it easy to manage and dynamically set what’s in the document’s head section. This makes server-side rendering and React Helmet a dynamic duo for creating apps that are SEO and social media-friendly.
       
     - [Jest](#typo3-extension-repository)
-       - Jest is a delightful JavaScript Testing Framework with a focus on simplicity. It works with projects using: Babel, TypeScript, Node, React, Angular, Vue and more!    
+       - Jest is a JavaScript Testing Framework with a focus on simplicity. It works with projects using: Babel, TypeScript, Node, React, Angular, and Vue. It is  designed to ensure correctness of any JavaScript codebase, and write tests with an approachable, familiar and feature-rich API that gives you results quickly. Additionally Jest is well-documented, requires little configuration and can be extended to match your requirements.
+
+  
     
     
     ![image](https://user-images.githubusercontent.com/40472408/70691211-86bdc300-1c86-11ea-8254-867dfea07491.png)
