@@ -11,7 +11,7 @@ const url = 'https://github.com/login/oauth/authorize?client_id=' + keys;
 
 
 
-const Home = () =>  (
+functionHome = () =>  (
 
     <Fragment>
         <Helmet><title>Be A Software Engineer!</title></Helmet>

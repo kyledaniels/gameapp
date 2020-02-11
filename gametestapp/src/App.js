@@ -9,6 +9,7 @@ import "./Appstyle.css";
 import Nav from "./components/Nav/Nav";
 
 function App() {
+  
   return (
     <Router>
       <Nav />
